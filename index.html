@@ -4,18 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Kunst, KI und erneuerbare Energien Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body, html {
+        html, body {
+            height: 100%;
             margin: 0;
             padding: 0;
+            font-family: 'Arial', sans-serif;
         }
 
         header {
-            background-color: #4CAF50;
+            background-color: #34495e;
             padding: 20px;
             text-align: center;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav ul {
@@ -28,22 +34,94 @@
             margin-right: 20px;
         }
 
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #2c3e50;
+        }
+
         .container {
+            min-height: calc(100% - 80px); /* Subtract header and footer height */
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
         }
 
         .content {
             display: none;
+            padding: 20px;
         }
 
-        .active {
+        .content.active {
             display: block;
         }
 
         .card {
-            background-color: #f9f9f9;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
             padding: 20px;
-            margin: 20px 0;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+        }
+
+        .profile-img {
+            border-radius: 50%;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #34495e;
+            color: white;
+        }
+
+        #home {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        #home i {
+            font-size: 48px;
+            color: #3498db;
+        }
+
+        #home h2 {
+            margin-top: 20px;
         }
 
         .article-preview {
@@ -91,8 +169,36 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- ... Other article previews ... -->
+
+            <div class="article-preview">
+                <div class="card">
+                    <img src="placeholder-image.jpg" alt="Artikel Bild">
+                    <div class="card-content">
+                        <h3>Artikel 2</h3>
+                        <p>Kurze Beschreibung des Artikels...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-preview">
+                <div class="card">
+                    <img src="placeholder-image.jpg" alt="Artikel Bild">
+                    <div class="card-content">
+                        <h3>Artikel 3</h3>
+                        <p>Kurze Beschreibung des Artikels...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-preview">
+                <div class="card">
+                    <img src="placeholder-image.jpg" alt="Artikel Bild">
+                    <div class="card-content">
+                        <h3>Artikel 4</h3>
+                        <p>Kurze Beschreibung des Artikels...</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Articles Section -->
@@ -100,70 +206,112 @@
             <h2>Artikel</h2>
             <p>Hier finden Sie alle unsere Artikel zu Kunst, KI und erneuerbaren Energien.</p>
 
-            <!-- Artikel über Energiewende und KI in Deutschland -->
+            <!-- Beispiel für einen Artikel -->
             <div class="card">
-                <h3>Die vielversprechende Zukunft der Energiewende in Deutschland durch den Einsatz von Künstlicher Intelligenz</h3>
-                <p><strong>Einleitung:</strong> Die Energiewende ist ein zentrales Anliegen in Deutschland, um den Ausstieg aus fossilen Brennstoffen zu fördern und erneuerbare Energien verstärkt zu nutzen. In diesem Artikel werden wir beleuchten, wie der strategische Einsatz von Künstlicher Intelligenz (KI) dabei helfen kann, die Energiewende in Deutschland erfolgreich voranzutreiben. Wir werden aufzeigen, wie KI zur Integration erneuerbarer Energien, zur Optimierung des Energieverbrauchs und zur Gewährleistung einer zuverlässigen Energieversorgung beitragen kann.</p>
-
-                <h4>Integration erneuerbarer Energien:</h4>
-                <p>Die Integration erneuerbarer Energien in das bestehende Energiesystem ist eine Herausforderung aufgrund der Volatilität und Abhängigkeit von Wetterbedingungen. Hier kann KI eine entscheidende Rolle spielen. Durch die Analyse umfangreicher Datenmengen wie Wetterdaten, Stromerzeugungsdaten und Verbrauchsdaten ermöglicht es KI, präzise Vorhersagen über die Energieerzeugung aus erneuerbaren Quellen zu treffen. Diese Vorhersagen ermöglichen eine bessere Koordination der Energieerzeugung und des -bedarfs, um Engpässe zu vermeiden und eine stabile Energieversorgung sicherzustellen.</p>
-
-                <h4>Optimierung des Energieverbrauchs:</h4>
-                <p>Die Optimierung des Energieverbrauchs spielt eine wichtige Rolle bei der Effizienzsteigerung und Kostenreduzierung. Hier kann KI helfen, indem sie große Mengen an Verbrauchsdaten analysiert und Muster erkennt. Mit Hilfe von Algorithmen zur Laststeuerung und -vorhersage können Unternehmen und Haushalte ihren Energieverbrauch optimieren und somit zur Stabilisierung des Stromnetzes beitragen. Zusätzlich kann KI-basierte Systeme Verbraucherempfehlungen geben, um ein Bewusstsein für einen nachhaltigen Energieverbrauch zu schaffen.</p>
-
-                <h4>Sicherung der Energieversorgung:</h4>
-                <p>Die Gewährleistung einer zuverlässigen Energieversorgung ist ein entscheidender Faktor für eine erfolgreiche Energiewende. KI kann bei der Überwachung und Optimierung des Stromnetzes eine wichtige Rolle spielen. Durch Echtzeitanalysen von Netzdaten können potenzielle Störungen frühzeitig erkannt und Maßnahmen zur Vermeidung von Ausfällen ergriffen werden. Darüber hinaus ermöglicht es KI, Engpässe in der Energieerzeugung zu prognostizieren und zu vermeiden, indem sie die Erzeugungsanlagen entsprechend steuert und die Integration erneuerbarer Energien erleichtert.</p>
-
-                <h4>Herausforderungen und Chancen:</h4>
-                <p>Neben den vielfältigen Vorteilen von KI in der Energiewende müssen auch Herausforderungen beachtet werden. Datenschutz, Datensicherheit und die Verfügbarkeit hochwertiger Daten sind zentrale Themen, die angegangen werden müssen. Die Zusammenarbeit zwischen Wirtschaft, Politik und Forschung ist von entscheidender Bedeutung, um die Potenziale von KI vollständig zu erschließen und sicherzustellen, dass die Technologie nachhaltig eingesetzt wird.</p>
-
-                <h4>Fazit:</h4>
-                <p>Der gezielte Einsatz von Künstlicher Intelligenz bietet vielversprechende Möglichkeiten für eine erfolgreiche Energiewende in Deutschland. KI kann die Integration erneuerbarer Energien unterstützen, den Energieverbrauch optimieren und die Sicherheit der Energieversorgung gewährleisten. Indem wir die Herausforderungen angehen und die Chancen nutzen, können wir gemeinsam eine nachhaltige Zukunft gestalten und einen wichtigen Beitrag zum Klimaschutz leisten. Die Energiewende in Deutschland wird durch den strategischen Einsatz von KI einen entscheidenden Schub erhalten.</p>
+                <h3>Titel des Artikels</h3>
+                <img src="placeholder-image.jpg" alt="Bild des Artikels">
+                <div class="card-content">
+                    <p>Inhalt des Artikels...</p>
+                </div>
             </div>
 
-            <!-- You can add more articles in a similar format here... -->
-
+            <!-- Hier fügen Sie den Artikel ein -->
+            <div class="card">
+                <h3>Warum Künstliche Intelligenz die Energiewende in Deutschland vorantreiben kann</h3>
+                <div class="card-content">
+                    <p>Künstliche Intelligenz (KI) bietet immense Möglichkeiten für die Energiewende in Deutschland. Durch ihre Fähigkeit, große Datenmengen zu analysieren und Muster zu erkennen, kann KI dazu beitragen, den Ausbau erneuerbarer Energien zu beschleunigen und die Effizienz des Energieverbrauchs zu optimieren. Lassen Sie uns einen genaueren Blick darauf werfen, warum KI eine Schlüsselrolle für die zukünftige Energieversorgung spielen könnte.</p>
+                    <p>Eines der Hauptprobleme bei der Integration erneuerbarer Energien in das Stromnetz ist ihre Volatilität. Die Stromerzeugung aus erneuerbaren Quellen, wie Sonne und Wind, schwankt stark in Abhängigkeit von Wetterbedingungen und anderen Faktoren. Hier kann KI helfen, indem sie präzise Vorhersagen über die Energieerzeugung trifft. Durch die Analyse von Wetterdaten, historischen Verbrauchsmustern und anderen relevanten Informationen kann KI die zukünftige Stromerzeugung aus erneuerbaren Quellen vorhersagen. Dies ermöglicht eine effizientere Planung und Steuerung der Stromnetze.</p>
+                    <p>Ein weiterer Vorteil von KI liegt in der Optimierung des Energieverbrauchs. Durch die Analyse von Verbrauchsdaten und die Anwendung von Algorithmen kann KI Muster und Zusammenhänge erkennen, die auf eine ineffiziente Nutzung von Energie hinweisen. Basierend auf diesen Erkenntnissen können Empfehlungen zur Verbesserung der Energieeffizienz gegeben werden, sowohl auf individueller Ebene als auch auf Unternehmensebene. Dies trägt dazu bei, den Energieverbrauch zu reduzieren und die Nachfrage nach Strom zu optimieren.</p>
+                    <p>Zusätzlich zur Integration erneuerbarer Energien und der Optimierung des Energieverbrauchs kann KI auch bei der Sicherung der Energieversorgung eine wichtige Rolle spielen. Durch die Echtzeitüberwachung von Stromnetzen können potenzielle Störungen und Engpässe frühzeitig erkannt werden. KI-gesteuerte Systeme können automatisch reagieren und entsprechende Maßnahmen ergreifen, um die Stabilität des Stromnetzes aufrechtzuerhalten.</p>
+                    <p>Es ist klar, dass Künstliche Intelligenz das Potenzial hat, die Energiewende in Deutschland zu beschleunigen und zu unterstützen. Durch die intelligentere Integration erneuerbarer Energien, die Optimierung des Energieverbrauchs und die Gewährleistung einer stabilen Energieversorgung kann KI dazu beitragen, die Herausforderungen der Energiewende zu bewältigen. Es ist an der Zeit, die Möglichkeiten von KI voll auszuschöpfen und eine nachhaltige und zukunftsfähige Energieversorgung zu realisieren.</p>
+                </div>
+            </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="content">
             <h2>Kontakt</h2>
-            <p>Schreiben Sie uns eine E-Mail an: <a href="mailto:info@example.com">info@example.com</a></p>
+            <p>Wenn Sie Fragen haben oder uns kontaktieren möchten, füllen Sie bitte das folgende Formular aus:</p>
+
+            <!-- Kontaktformular -->
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Name">
+                <input type="email" name="email" placeholder="E-Mail">
+                <textarea name="message" placeholder="Nachricht"></textarea>
+                <input type="submit" value="Senden" class="button">
+            </form>
         </section>
 
-        <!-- About Us Section -->
+        <!-- About Section -->
         <section id="about" class="content">
             <h2>Über uns</h2>
-            <p>Wir sind ein Team von Enthusiasten, die sich für Kunst, KI und erneuerbare Energien interessieren.</p>
+            <div class="card">
+                <img src="profile-image.jpg" alt="Profil Bild" class="profile-img">
+                <div class="card-content">
+                    <p>Wir sind ein Team aus Enthusiasten, die sich für Kunst, KI und erneuerbare Energien interessieren.</p>
+                </div>
+            </div>
         </section>
-
     </div>
 
+    <footer>
+        <p>© 2023 Kunst, KI und erneuerbare Energien Blog. Alle Rechte vorbehalten.</p>
+    </footer>
+
     <script>
-document.getElementById("home-link").addEventListener("click", function () {
-            toggleVisibility("home");
+document.getElementById("home-link").addEventListener("click", function (e) {
+e.preventDefault();
+            switchContent("home");
+        });
+document.getElementById("articles-link").addEventListener("click", function (e) {
+e.preventDefault();
+            switchContent("articles");
+        });
+document.getElementById("contact-link").addEventListener("click", function (e) {
+e.preventDefault();
+            switchContent("contact");
+        });
+document.getElementById("about-link").addEventListener("click", function (e) {
+e.preventDefault();
+            switchContent("about");
         });
 
-document.getElementById("articles-link").addEventListener("click", function () {
-            toggleVisibility("articles");
-        });
-
-document.getElementById("contact-link").addEventListener("click", function () {
-            toggleVisibility("contact");
-        });
-
-document.getElementById("about-link").addEventListener("click", function () {
-            toggleVisibility("about");
-        });
-
-        function toggleVisibility(id) {
-            const sections = document.getElementsByClassName("content");
-            for (let section of sections) {
-section.classList.remove("active");
-            }
+        function switchContent(id) {
+            const sections = document.querySelectorAll(".content");
+sections.forEach(section => section.classList.remove("active"));
 document.getElementById(id).classList.add("active");
         }
+        
+        // Sticky Header
+window.onscroll = function () { makeHeaderSticky() };
+
+        var header = document.querySelector("header");
+        var sticky = header.offsetTop;
+
+        function makeHeaderSticky() {
+            if (window.pageYOffset > sticky) {
+header.classList.add("sticky");
+            } else {
+header.classList.remove("sticky");
+            }
+        }
+
     </script>
+
+    <style>
+        /* Additional styles for sticky header */
+.sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Make sure the header stays on top of other content */
+        }
+
+        /* Add some padding to the content so it doesn't get hidden under the sticky header */
+.container {
+            padding-top: 120px;
+        }
+    </style>
 
 </body>
 
