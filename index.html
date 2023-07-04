@@ -10,11 +10,11 @@
         body, html {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
 
         header {
-            background-color: #4CAF50;
+            background-color: #34495e;
             padding: 20px;
             text-align: center;
             color: white;
@@ -34,6 +34,13 @@
             color: white;
             text-decoration: none;
             font-size: 20px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #2c3e50;
         }
 
         .container {
@@ -45,8 +52,6 @@
         .content {
             display: none;
             padding: 20px;
-            background-color: #f1f1f1;
-            border-radius: 10px;
         }
 
         .content.active {
@@ -58,19 +63,35 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin: 20px;
+            padding: 20px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
 
         .card-content {
             padding: 20px;
         }
 
+        .card img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
         .button {
             display: inline-block;
-            background-color: #4CAF50;
+            background-color: #3498db;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
         }
 
         .profile-img {
@@ -80,22 +101,34 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #4CAF50;
+            background-color: #34495e;
             color: white;
         }
 
         #home {
             text-align: center;
-            padding-top: 50px;
+            padding-top: 20px;
         }
 
         #home i {
             font-size: 48px;
-            color: #4CAF50;
+            color: #3498db;
         }
 
         #home h2 {
             margin-top: 20px;
+        }
+
+        .article-preview {
+            display: inline-block;
+            width: 23%;
+            margin: 1%;
+        }
+
+        @media screen and (max-width: 768px) {
+            .article-preview {
+                width: 48%;
+            }
         }
     </style>
 </head>
@@ -106,90 +139,67 @@
         <h1>Kunst, KI und erneuerbare Energien Blog</h1>
         <nav>
             <ul>
-                <li><a href="#home" id="home-link">Startseite</a></li>
-                <li><a href="#articles" id="articles-link">Artikel</a></li>
-                <li><a href="#contact" id="contact-link">Kontakt</a></li>
-                <li><a href="#about" id="about-link">Über uns</a></li>
+                <li><a href="#" id="home-link"><i class="fas fa-home"></i> Startseite</a></li>
+                <li><a href="#" id="articles-link"><i class="fas fa-newspaper"></i> Artikel</a></li>
+                <li><a href="#" id="contact-link"><i class="fas fa-envelope"></i> Kontakt</a></li>
+                <li><a href="#" id="about-link"><i class="fas fa-user"></i> Über uns</a></li>
             </ul>
         </nav>
     </header>
 
-    <div id="main-content" class="container">
+    <div class="container">
         <section id="home" class="content active">
-            <i class="fas fa-home"></i>
             <h2>Willkommen auf unserem Blog!</h2>
-            <p>Entdecken Sie interessante Artikel über Kunst, KI und erneuerbare Energien.</p>
-        </section>
+            <p>Hier finden Sie die neuesten Artikel:</p>
 
-        <section id="articles" class="content">
-            <h2>Artikel</h2>
-            <div class="card">
-                <div class="card-content">
-                    <h3>Titel des Artikels</h3>
-                    <p>Hier steht der Inhalt des Artikels. Ersetzen Sie diesen Text mit dem Inhalt Ihres eigenen Artikels.</p>
+            <!-- Artikel Previews -->
+            <div class="article-preview">
+                <div class="card">
+                    <img src="placeholder-image.jpg" alt="Artikel Bild">
+                    <div class="card-content">
+                        <h3>Artikel 1</h3>
+                        <p>Kurze Beschreibung des Artikels...</p>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <section id="contact" class="content">
-            <h2>Kontakt</h2>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name">
-                <label for="email">E-Mail:</label>
-                <input type="email" id="email" name="email">
-                <label for="message">Nachricht:</label>
-                <textarea id="message" name="message"></textarea>
-                <input type="submit" value="Senden">
-            </form>
-        </section>
-
-        <section id="about" class="content">
-            <h2>Über uns</h2>
-            <div class="card">
-                <img class="profile-img" src="profile-placeholder.png" alt="Profilbild" width="100" height="100">
-                <div class="card-content">
-                    <h3>Name des Autors</h3>
-                    <p>Hier steht eine kurze Biographie des Autors.</p>
+            <div class="article-preview">
+                <div class="card">
+                    <img src="placeholder-image.jpg" alt="Artikel Bild">
+                    <div class="card-content">
+                        <h3>Artikel 2</h3>
+                        <p>Kurze Beschreibung des Artikels...</p>
+                    </div>
                 </div>
             </div>
+
+            <div class="article-preview">
+                <div class="card">
+                    <img src="placeholder-image.jpg" alt="Artikel Bild">
+                    <div class="card-content">
+                        <h3>Artikel 3</h3>
+                        <p>Kurze Beschreibung des Artikels...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-preview">
+                <div class="card">
+                    <img src="placeholder-image.jpg" alt="Artikel Bild">
+                    <div class="card-content">
+                        <h3>Artikel 4</h3>
+                        <p>Kurze Beschreibung des Artikels...</p>
+                    </div>
+                </div>
+            </div>
+
         </section>
+
+        <!-- Weitere Abschnitte hier (Artikel, Kontakt, Über uns) wie im vorherigen Code -->
+
     </div>
 
-    <footer>
-        <p>&copy; 2023 Kunst, KI und erneuerbare Energien Blog</p>
-    </footer>
-
-    <script>
-document.getElementById("home-link").addEventListener("click", function (e) {
-e.preventDefault();
-            setActive("home");
-        });
-
-document.getElementById("articles-link").addEventListener("click", function (e) {
-e.preventDefault();
-            setActive("articles");
-        });
-
-document.getElementById("contact-link").addEventListener("click", function (e) {
-e.preventDefault();
-            setActive("contact");
-        });
-
-document.getElementById("about-link").addEventListener("click", function (e) {
-e.preventDefault();
-            setActive("about");
-        });
-
-        function setActive(id) {
-            var sections = document.querySelectorAll(".content");
-sections.forEach(function (section) {
-section.classList.remove("active");
-            });
-
-document.getElementById(id).classList.add("active");
-        }
-    </script>
+    <!-- Footer und Skript hier wie im vorherigen Code -->
 
 </body>
 
