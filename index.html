@@ -1,194 +1,232 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kunst, KI und erneuerbare Energien Blog</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunst, KI und erneuerbare Energien Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Roboto', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f7f7f7;
-    }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            line-height: 1.6;
+        }
 
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #4A90E2;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      border-radius: 0 0 20px 20px;
-      z-index: 1;
-    }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #333;
+            padding: 1rem 0;
+            z-index: 1;
+        }
 
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: space-around;
-    }
+        header h1 {
+            color: #fff;
+            text-align: center;
+        }
 
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      padding: 10px;
-      transition: background-color 0.3s, transform 0.3s;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-    }
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            padding: 0;
+            background: #444;
+        }
 
-    nav ul li a:hover {
-      background-color: #357ABD;
-      transform: scale(1.1);
-    }
+        nav ul li {
+            list-style: none;
+        }
 
-    main {
-      margin: 120px 20px 20px;
-    }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem;
+            display: block;
+        }
 
-    article {
-      margin-bottom: 40px;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: box-shadow 0.3s ease-in-out;
-    }
+        nav ul li a:hover {
+            background: #555;
+        }
 
-    article:hover {
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
+        #main-content {
+            margin-top: 100px;
+        }
 
-    h1, h2 {
-      color: #333;
-      margin-top: 0;
-    }
+        .content {
+            display: none;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+        }
 
-    p {
-      line-height: 1.5;
-      color: #666;
-    }
+        .active {
+            display: block;
+        }
 
-    footer {
-      background-color: #4A90E2;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
 
-    footer p {
-      margin: 0;
-    }
+        .card {
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
 
-    .content {
-      display: none;
-      padding: 20px;
-      background-color: #f2f2f2;
-      color: #333;
-      border-radius: 5px;
-    }
+        .card img {
+            width: 100%;
+        }
 
-    .active {
-      display: block;
-    }
+        .card-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
-    }
+        .card-title {
+            font-size: 1.5rem;
+        }
 
-    .form-container {
-      max-width: 500px;
-      margin: 0 auto;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
+        .card-text {
+            margin: 1rem 0;
+        }
 
-    .form-container input[type="submit"] {
-      cursor: pointer;
-      background-color: #4A90E2;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      transition: transform 0.3s;
-    }
+        .button {
+            display: inline-block;
+            color: #fff;
+            background: #333;
+            padding: 0.5rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+        }
 
-    .form-container input[type="submit"]:hover {
-      transform: scale(1.05);
-    }
-  </style>
+        .button:hover {
+            background: #444;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: auto;
+            padding: 0 2rem;
+        }
+
+        .profile-img {
+            max-width: 150px;
+            border-radius: 50%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .profile-content {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer {
+            padding: 1rem 0;
+            background: #333;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li>
-          <a id="home-link" href="#">
-            <i class="fas fa-home"></i> Startseite
-          </a>
-        </li>
-        <li>
-          <a id="articles-link" href="#">
-            <i class="fas fa-newspaper"></i> Artikel
-          </a>
-        </li>
-        <li>
-          <a id="contact-link" href="#">
-            <i class="fas fa-envelope"></i> Kontakt
-          </a>
-        </li>
-        <li>
-          <a id="about-link" href="#">
-            <i class="fas fa-info-circle"></i> Über uns
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <div id="home" class="content active">
-      <!-- ... -->
+
+    <header>
+        <h1>Kunst, KI und erneuerbare Energien Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="#articles" id="articles-link">Artikel</a></li>
+                <li><a href="#contact" id="contact-link">Kontakt</a></li>
+                <li><a href="#about" id="about-link">Über uns</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="main-content" class="container">
+        <section id="articles" class="content active">
+            <div class="grid">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300" alt="Artikel Bild">
+                    <div class="card-content">
+                        <h2 class="card-title">Artikel 1</h2>
+                        <p class="card-text">Dies ist ein kurzer Auszug aus Artikel 1.</p>
+                        <a href="#" class="button">Lesen Sie mehr</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300" alt="Artikel Bild">
+                    <div class="card-content">
+                        <h2 class="card-title">Artikel 2</h2>
+                        <p class="card-text">Dies ist ein kurzer Auszug aus Artikel 2.</p>
+                        <a href="#" class="button">Lesen Sie mehr</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content">
+            <h2>Kontaktformular</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Nachricht:</label>
+                <textarea id="message" name="message" required></textarea>
+                <input type="submit" value="Senden">
+            </form>
+        </section>
+
+        <section id="about" class="content">
+            <img class="profile-img" src="https://via.placeholder.com/150" alt="Profilbild">
+            <div class="profile-content">
+                <h2>Über uns</h2>
+                <p>
+                    Wir sind ein Team von KI-Enthusiasten, die sich für Kunst und erneuerbare Energien interessieren. Wir glauben, dass diese Kombination die Zukunft ist.
+                </p>
+            </div>
+        </section>
     </div>
-    <div id="articles" class="content">
-      <div class="grid">
-        <article>
-          <h2>Der Einfluss von KI auf erneuerbare Energien</h2>
-          <p>...</p>
-        </article>
-        <article>
-          <h2>Kunst und KI: Eine revolutionäre Kombination</h2>
-          <p>...</p>
-        </article>
-        <!-- ... -->
-      </div>
-    </div>
-    <div id="contact" class="content">
-      <div class="form-container">
-        <!-- ... -->
-      </div>
-    </div>
-    <div id="about" class="content">
-      <!-- ... -->
-    </div>
-  </main>
-  <footer>
-    <p>© 2023 KKE Blog. Alle Rechte vorbehalten.</p>
-  </footer>
+
+    <footer>
+        <p>&copy; 2023 Kunst, KI und erneuerbare Energien Blog. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var links = document.querySelectorAll('nav ul li a');
+            var contentSections = document.querySelectorAll('.content');
+
+            links.forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+
+                    var target = link.getAttribute('href').substring(1);
+
+                    contentSections.forEach(function (section) {
+                        section.classList.remove('active');
+                    });
+
+                    document.getElementById(target).classList.add('active');
+                });
+            });
+        });
+    </script>
+
 </body>
+
 </html>
