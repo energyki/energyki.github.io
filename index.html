@@ -5,66 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kunst, KI und erneuerbare Energien Blog</title>
   <style>
-* {
-      box-sizing: border-box;
-    }
+    /* Füge hier den vorhandenen CSS-Stilcode ein */
 
-body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-header {
-      background-color: #333;
-      color: #fff;
+    .content {
+      display: none;
       padding: 20px;
-      text-align: center;
     }
 
-nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-
-nav ul li {
-      display: inline;
-    }
-
-nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      padding: 10px;
-    }
-
-main {
-      margin: 20px;
-    }
-
-article {
-      margin-bottom: 40px;
-    }
-
-h1, h2 {
-      color: #333;
-    }
-
-p {
-      line-height: 1.5;
-    }
-
-footer {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-footer p {
-      margin: 0;
+    .active {
+      display: block;
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var aboutLink = document.getElementById('about-link');
+      var contactLink = document.getElementById('contact-link');
+      var aboutContent = document.getElementById('about-content');
+      var contactContent = document.getElementById('contact-content');
+
+      aboutLink.addEventListener('click', function() {
+        aboutContent.classList.toggle('active');
+      });
+
+      contactLink.addEventListener('click', function() {
+        contactContent.classList.toggle('active');
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -72,9 +39,9 @@ footer p {
     <nav>
       <ul>
         <li><a href="#">Startseite</a></li>
-        <li><a href="#">Über uns</a></li>
+        <li><a id="about-link" href="#">Über uns</a></li>
         <li><a href="#">Kategorien</a></li>
-        <li><a href="#">Kontakt</a></li>
+        <li><a id="contact-link" href="#">Kontakt</a></li>
       </ul>
     </nav>
   </header>
@@ -84,7 +51,7 @@ footer p {
       <h2>Titel des Blogbeitrags</h2>
       <p>Datum des Beitrags</p>
       <p>Autor des Beitrags</p>
-      <img src="https://cdn.pixabay.com/photo/2023/05/19/15/40/man-8004816_960_720.jpg" alt="Bildbeschreibung">
+      <img src="bild.jpg" alt="Bildbeschreibung">
       <p>Text des Blogbeitrags hier...</p>
     </article>
 
@@ -92,11 +59,21 @@ footer p {
       <h2>Titel des nächsten Blogbeitrags</h2>
       <p>Datum des Beitrags</p>
       <p>Autor des Beitrags</p>
-      <img src="https://cdn.pixabay.com/photo/2023/05/19/15/40/man-8004816_960_720.jpg" alt="Bildbeschreibung">
+      <img src="bild.jpg" alt="Bildbeschreibung">
       <p>Text des Blogbeitrags hier...</p>
     </article>
 
     <!-- Weitere Blogbeiträge hier einfügen -->
+
+    <div id="about-content" class="content">
+      <h2>Über uns</h2>
+      <p>Hier kannst du Informationen über uns einfügen.</p>
+    </div>
+
+    <div id="contact-content" class="content">
+      <h2>Kontakt</h2>
+      <p>Hier kannst du Kontaktdetails einfügen.</p>
+    </div>
   </main>
 
   <footer>
