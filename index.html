@@ -1,262 +1,290 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kunst, KI und erneuerbare Energien Blog</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        html,
-        body {
+html,
+body {
             height: 100%;
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
         }
+css
+Copy code
+header {
+        background-color: #34495e;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
 
-        header {
-            background-color: #34495e;
-            padding: 20px;
-            text-align: center;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+nav ul {
+        list-style: none;
+        padding: 0;
+    }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
+nav ul li {
+        display: inline-block;
+        margin-right: 20px;
+    }
 
-        nav ul li {
-            display: inline-block;
-            margin-right: 20px;
-        }
+nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 20px;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
+nav ul li a:hover {
+        background-color: #2c3e50;
+    }
 
-        nav ul li a:hover {
-            background-color: #2c3e50;
-        }
+.container {
+        min-height: calc(100% - 80px);
+        /* Subtract header and footer height */
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
 
-        .container {
-            min-height: calc(100% - 80px);
-            /* Subtract header and footer height */
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+.content {
+        display: none;
+        padding: 20px;
+    }
 
-        .content {
-            display: none;
-            padding: 20px;
-        }
+    .content.active {
+        display: block;
+    }
 
-        .content.active {
-            display: block;
-        }
+    .card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        padding: 20px;
+        transition: box-shadow 0.3s ease;
+    }
 
-        .card {
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 20px;
-            padding: 20px;
-            transition: box-shadow 0.3s ease;
-        }
+    .card:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
 
-        .card:hover {
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
+    .card-content {
+        padding: 20px;
+    }
 
-        .card-content {
-            padding: 20px;
-        }
+    .card img {
+        max-width: 100%;
+        border-radius: 5px;
+    }
 
-        .card img {
-            max-width: 100%;
-            border-radius: 5px;
-        }
+    .button {
+        display: inline-block;
+        background-color: #3498db;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
 
-        .button {
-            display: inline-block;
-            background-color: #3498db;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
+    .button:hover {
+        background-color: #2980b9;
+    }
 
-        .button:hover {
-            background-color: #2980b9;
-        }
+    .profile-img {
+        border-radius: 50%;
+    }
 
-        .profile-img {
-            border-radius: 50%;
-        }
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #34495e;
+        color: white;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #34495e;
-            color: white;
-        }
+    #home {
+        text-align: center;
+        padding-top: 20px;
+    }
 
-        #home {
-            text-align: center;
-            padding-top: 20px;
-        }
+    #home i {
+        font-size: 48px;
+        color: #3498db;
+    }
 
-        #home i {
-            font-size: 48px;
-            color: #3498db;
-        }
+    #home h2 {
+        margin-top: 20px;
+    }
 
-        #home h2 {
-            margin-top: 20px;
-        }
+    .article-preview {
+        display: inline-block;
+        width: 23%;
+        margin: 1%;
+    }
 
+    .sidebar {
+        position: sticky;
+        top: 80px;
+        width: 200px;
+        height: 100%;
+        background-color: #f1f1f1;
+        padding: 20px;
+        overflow-y: auto;
+        z-index: 100;
+    }
+
+    .sidebar a {
+        display: block;
+        margin-bottom: 10px;
+        color: #000;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .sidebar a:hover {
+        color: #3498db;
+    }
+
+    @media screen and (max-width: 768px) {
         .article-preview {
-            display: inline-block;
-            width: 23%;
-            margin: 1%;
+            width: 48%;
         }
 
-        @media screen and (max-width: 768px) {
-            .article-preview {
-                width: 48%;
-            }
+        .sidebar {
+            display: none;
         }
-    </style>
+    }
+</style>
 </head>
-
 <body>
+php
+Copy code
+<header>
+    <h1>Kunst, KI und erneuerbare Energien Blog</h1>
+    <nav>
+        <ul>
+            <li><a href="#" id="articles-link"><i class="fas fa-newspaper"></i> Artikel</a></li>
+            <li><a href="#" id="contact-link"><i class="fas fa-envelope"></i> Kontakt</a></li>
+            <li><a href="#" id="about-link"><i class="fas fa-user"></i> Über uns</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <header>
-        <h1>Kunst, KI und erneuerbare Energien Blog</h1>
-        <nav>
-            <ul>
-                <li><a href="#" id="articles-link"><i class="fas fa-newspaper"></i> Artikel</a></li>
-                <li><a href="#" id="contact-link"><i class="fas fa-envelope"></i> Kontakt</a></li>
-                <li><a href="#" id="about-link"><i class="fas fa-user"></i> Über uns</a></li>
-            </ul>
-        </nav>
-    </header>
+<div class="container">
 
-    <div class="container">
+    <!-- Articles Section -->
+    <section id="articles" class="content active">
+        <h2>Artikel</h2>
+        <p>Hier finden Sie alle unsere Artikel zu Kunst, KI und erneuerbaren Energien.</p>
 
-        <!-- Articles Section (Landing Page) -->
-        <section id="articles" class="content active">
-            <h2>Artikel</h2>
-            <p>Hier finden Sie alle unsere Artikel zu Kunst, KI und erneuerbaren Energien.</p>
+        <div class="sidebar">
+            <h3>Artikelübersicht</h3>
+            <a href="#article1">Die vielversprechende Zukunft der Energiewende in Deutschland durch den Einsatz von Künstlicher Intelligenz</a>
+            <a href="#article2">Die besten Strategien für erneuerbare Energien in Europa</a>
+            <a href="#article3">Die Rolle von Wasserkraft in der Energiewende</a>
+            <a href="#article4">Die Zukunft der Windenergie in Europa</a>
+        </div>
 
-            <!-- Beispiel für einen Artikel -->
-            <div class="card">
-                <h2 style="font-size: 28px; letter-spacing: 1px;">Die vielversprechende Zukunft der Energiewende in Deutschland durch den Einsatz von Künstlicher Intelligenz</h2>
-                <img src="https://cdn.pixabay.com/photo/2017/03/13/07/34/photovoltaic-2138992_1280.jpg" alt="Bild des Artikels">
-                <div class="card-content">
-                    <p><strong>Einleitung</strong></p>
-                    <p>Die Energiewende ist ein zentrales Anliegen in Deutschland, um den Ausstieg aus fossilen Brennstoffen zu fördern und erneuerbare Energien verstärkt zu nutzen. In diesem Artikel werden wir beleuchten, wie der strategische Einsatz von Künstlicher Intelligenz (KI) dabei helfen kann, die Energiewende in Deutschland erfolgreich voranzutreiben. Wir werden aufzeigen, wie KI zur Integration erneuerbarer Energien, zur Optimierung des Energieverbrauchs und zur Gewährleistung einer zuverlässigen Energieversorgung beitragen kann.</p>
-                    <!-- Rest of the article content -->
-                </div>
+        <!-- Beispiel für einen Artikel -->
+        <div class="card" id="article1">
+            <h2 style="font-size: 28px; letter-spacing: 1px;">Die vielversprechende Zukunft der Energiewende in Deutschland durch den Einsatz von Künstlicher Intelligenz</h2>
+            <img src="https://cdn.pixabay.com/photo/2017/03/13/07/34/photovoltaic-2138992_1280.jpg" alt="Bild des Artikels">
+            <div class="card-content">
+                <p><strong>Einleitung</strong></p>
+                <p>Die Energiewende ist ein zentrales Anliegen in Deutschland, um den Ausstieg aus fossilen Brennstoffen zu fördern und erneuerbare Energien verstärkt zu nutzen. In diesem Artikel werden wir beleuchten, wie der strategische Einsatz von Künstlicher Intelligenz (KI) dabei helfen kann, die Energiewende in Deutschland erfolgreich voranzutreiben. Wir werden aufzeigen, wie KI zur Integration erneuerbarer Energien, zur Optimierung des Energieverbrauchs und zur Gewährleistung einer zuverlässigen Energieversorgung beitragen kann.</p>
+
+                <!-- Rest of the article content -->
             </div>
+        </div>
 
-            <div class="card">
-                <h2 style="font-size: 28px; letter-spacing: 1px;">Die besten Strategien für erneuerbare Energien in Europa</h2>
-                <img src="https://cdn.pixabay.com/photo/2017/09/12/13/21/photovoltaic-system-2742302_640.jpg" alt="Bild des Artikels">
-                <div class="card-content">
-                    <p><strong>Einleitung</strong></p>
-                    <p>Europa steht vor der Herausforderung, den Anteil erneuerbarer Energien weiter zu erhöhen und gleichzeitig die Energieversorgung sicherzustellen. In diesem Artikel werden wir die besten Strategien untersuchen, die in Europa zur Förderung der erneuerbaren Energien eingesetzt werden. Wir werden uns auf verschiedene Länder und deren Ansätze konzentrieren, um einen umfassenden Überblick über die besten Praktiken zu geben.</p>
-                    <!-- Rest of the article content -->
-                </div>
+        <div class="card" id="article2">
+            <h2 style="font-size: 28px; letter-spacing: 1px;">Die besten Strategien für erneuerbare Energien in Europa</h2>
+            <img src="https://cdn.pixabay.com/photo/2017/09/12/13/21/photovoltaic-system-2742302_640.jpg" alt="Bild des Artikels">
+            <div class="card-content">
+                <p><strong>Einleitung</strong></p>
+                <p>Europa steht vor der Herausforderung, den Anteil erneuerbarer Energien weiter zu erhöhen und gleichzeitig die Energieversorgung sicherzustellen. In diesem Artikel werden wir die besten Strategien untersuchen, die in Europa zur Förderung der erneuerbaren Energien eingesetzt werden. Wir werden uns auf verschiedene Länder und deren Ansätze konzentrieren, um einen umfassenden Überblick über die besten Praktiken zu geben.</p>
+
+                <!-- Rest of the article content -->
             </div>
+        </div>
 
-            <div class="card">
-                <h2 style="font-size: 28px; letter-spacing: 1px;">Die Rolle von Wasserkraft in der Energiewende</h2>
-                <img src="https://cdn.pixabay.com/photo/2016/11/23/14/48/sunflowers-1853323_640.jpg" alt="Bild des Artikels">
-                <div class="card-content">
-                    <p><strong>Einleitung</strong></p>
-                    <p>Wasserkraft spielt eine entscheidende Rolle in der Energiewende, da sie eine nachhaltige und emissionsfreie Energiequelle darstellt. In diesem Artikel werden wir die Bedeutung von Wasserkraft untersuchen und die Vorteile sowie Herausforderungen dieser Energieform diskutieren.</p>
-                    <!-- Rest of the article content -->
-                </div>
+        <div class="card" id="article3">
+            <h2 style="font-size: 28px; letter-spacing: 1px;">Die Rolle von Wasserkraft in der Energiewende</h2>
+            <img src="https://cdn.pixabay.com/photo/2016/11/23/14/48/sunflowers-1853323_640.jpg" alt="Bild des Artikels">
+            <div class="card-content">
+                <p><strong>Einleitung</strong></p>
+                <p>Wasserkraft spielt eine entscheidende Rolle in der Energiewende, da sie eine nachhaltige und emissionsfreie Energiequelle darstellt. In diesem Artikel werden wir die Bedeutung von Wasserkraft untersuchen und die Vorteile sowie Herausforderungen dieser Energieform diskutieren.</p>
+
+<!-- Rest of the article content -->
             </div>
+        </div>
 
-            <div class="card">
-                <h2 style="font-size: 28px; letter-spacing: 1px;">Die Zukunft der Windenergie in Europa</h2>
-                <img src="https://cdn.pixabay.com/photo/2012/06/22/23/08/windmill-50512_640.jpg" alt="Bild des Artikels">
-                <div class="card-content">
-                    <p><strong>Einleitung</strong></p>
-                    <p>Die Windenergie spielt eine immer wichtigere Rolle in Europa und ist eine bedeutende erneuerbare Energiequelle. In diesem Artikel werden wir die Zukunft der Windenergie in Europa untersuchen und auf die Vorteile, Herausforderungen und Potenziale dieser Energieform eingehen.</p>
-                    <!-- Rest of the article content -->
-                </div>
+        <div class="card" id="article4">
+            <h2 style="font-size: 28px; letter-spacing: 1px;">Die Zukunft der Windenergie in Europa</h2>
+            <img src="https://cdn.pixabay.com/photo/2012/06/22/23/08/windmill-50512_640.jpg" alt="Bild des Artikels">
+            <div class="card-content">
+                <p><strong>Einleitung</strong></p>
+                <p>Die Windenergie spielt eine immer wichtigere Rolle in Europa und ist eine bedeutende erneuerbare Energiequelle. In diesem Artikel werden wir die Zukunft der Windenergie in Europa untersuchen und auf die Vorteile, Herausforderungen und Potenziale dieser Energieform eingehen.</p>
+
+                <!-- Rest of the article content -->
             </div>
+        </div>
 
-        </section>
+    </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="content">
-            <h2>Kontakt</h2>
-            <p>Haben Sie Fragen, Anregungen oder möchten Sie Kontakt mit uns aufnehmen?</p>
-            <p>Sie können uns wie folgt erreichen:</p>
+    <!-- Contact Section -->
+    <section id="contact" class="content">
+        <h2>Kontakt</h2>
+        <p>Haben Sie Fragen, Anregungen oder möchten Sie Kontakt mit uns aufnehmen?</p>
 
-            <ul>
-                <li><strong>Email:</strong> your-email@example.com</li>
-                <li><strong>Telefon:</strong> +49 123 456789</li>
-                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/your-profile" target="_blank"><i class="fab fa-linkedin"></i> Ihr LinkedIn-Profil</a></li>
-            </ul>
-        </section>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <div style="max-width: 600px;">
+                <img src="https://cdn.pixabay.com/photo/2021/07/30/14/44/lake-6508296_640.jpg" alt="Bild für Kontakt" style="max-width: 100%; border-radius: 5px;">
+            </div>
+            <div style="max-width: 600px; margin-left: 20px;">
+                <p><strong>Name:</strong> Max Mustermann</p>
+                <p><strong>E-Mail:</strong> max.mustermann@example.com</p>
+                <p><strong>Telefon:</strong> +49 123456789</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- About Section -->
-        <section id="about" class="content">
-            <h2>Über uns</h2>
-            <img src="https://cdn.pixabay.com/photo/2019/07/06/09/37/wind-farm-4327789_640.jpg" alt="Bild des Teams" class="profile-img">
-            <p>Wir sind ein engagiertes Team von Experten im Bereich erneuerbare Energien und Technologie. Unser Ziel ist es, das Bewusstsein für die Bedeutung erneuerbarer Energien zu fördern und innovative Lösungen für eine nachhaltige Zukunft zu entwickeln. Auf unserem Blog teilen wir unser Wissen und informieren über aktuelle Entwicklungen und Trends in der Branche.</p>
-        </section>
+    <!-- About Section -->
+    <section id="about" class="content">
+        <h2>Über uns</h2>
+        <p>Wir sind ein engagiertes Team von Experten, die sich mit den Themen Kunst, Künstliche Intelligenz und erneuerbare Energien beschäftigen. Unser Ziel ist es, Informationen und Einblicke in diese spannenden Bereiche zu teilen und den Dialog darüber zu fördern.</p>
+        <p>Bleiben Sie auf dem Laufenden, indem Sie regelmäßig unsere Artikel lesen und mit uns in Kontakt treten.</p>
+    </section>
 
-    </div>
+</div>
 
-    <footer>
-        <p>&copy; 2023 Kunst, KI und erneuerbare Energien Blog. Alle Rechte vorbehalten.</p>
-    </footer>
+<footer>
+    &copy; 2023 Kunst, KI und erneuerbare Energien Blog. Alle Rechte vorbehalten.
+</footer>
 
-    <script>
-        // JavaScript code for switching between content sections
-        const articlesLink = document.getElementById('articles-link');
-        const contactLink = document.getElementById('contact-link');
-        const aboutLink = document.getElementById('about-link');
-        const articlesSection = document.getElementById('articles');
-        const contactSection = document.getElementById('contact');
-        const aboutSection = document.getElementById('about');
+<script>
+    // Scroll to corresponding section when a link is clicked
+document.getElementById("articles-link").addEventListener("click", function () {
+document.getElementById("articles").scrollIntoView({ behavior: "smooth" });
+    });
 
-articlesLink.addEventListener('click', () => {
-articlesSection.classList.add('active');
-contactSection.classList.remove('active');
-aboutSection.classList.remove('active');
-        });
+document.getElementById("contact-link").addEventListener("click", function () {
+document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+    });
 
-contactLink.addEventListener('click', () => {
-articlesSection.classList.remove('active');
-contactSection.classList.add('active');
-aboutSection.classList.remove('active');
-        });
-
-aboutLink.addEventListener('click', () => {
-articlesSection.classList.remove('active');
-contactSection.classList.remove('active');
-aboutSection.classList.add('active');
-        });
-    </script>
-
+document.getElementById("about-link").addEventListener("click", function () {
+document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+    });
+</script>
 </body>
-
 </html>
