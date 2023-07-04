@@ -88,6 +88,86 @@
     .active {
       display: block;
     }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-title {
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    .card-date {
+      color: #999;
+      margin-bottom: 10px;
+    }
+
+    .card-author {
+      color: #999;
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      color: #666;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="email"],
+    .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-container textarea {
+      height: 100px;
+    }
+
+    .form-container input[type="submit"] {
+      background-color: #99CC99;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -120,23 +200,29 @@
   </header>
 
   <main>
-    <article>
-      <h2 style="font-size: 24px;">Titel des Blogbeitrags</h2>
-      <p style="color: #999; margin-bottom: 10px;">Datum des Beitrags</p>
-      <p style="color: #999; margin-bottom: 10px;">Autor des Beitrags</p>
-      <img src="bild.jpg" alt="Bildbeschreibung" style="width: 100%; max-width: 600px; border-radius: 5px; margin-bottom: 10px;">
-      <p style="color: #666;">Text des Blogbeitrags hier...</p>
-    </article>
+    <div class="grid">
+      <article class="card">
+        <img src="bild.jpg" alt="Bildbeschreibung">
+        <div class="card-content">
+          <h2 class="card-title">Titel des Blogbeitrags</h2>
+          <p class="card-date">Datum des Beitrags</p>
+          <p class="card-author">Autor des Beitrags</p>
+          <p class="card-text">Text des Blogbeitrags hier...</p>
+        </div>
+      </article>
 
-    <article>
-      <h2 style="font-size: 24px;">Titel des nächsten Blogbeitrags</h2>
-      <p style="color: #999; margin-bottom: 10px;">Datum des Beitrags</p>
-      <p style="color: #999; margin-bottom: 10px;">Autor des Beitrags</p>
-      <img src="bild.jpg" alt="Bildbeschreibung" style="width: 100%; max-width: 600px; border-radius: 5px; margin-bottom: 10px;">
-      <p style="color: #666;">Text des Blogbeitrags hier...</p>
-    </article>
+      <article class="card">
+        <img src="bild.jpg" alt="Bildbeschreibung">
+        <div class="card-content">
+          <h2 class="card-title">Titel des nächsten Blogbeitrags</h2>
+          <p class="card-date">Datum des Beitrags</p>
+          <p class="card-author">Autor des Beitrags</p>
+          <p class="card-text">Text des Blogbeitrags hier...</p>
+        </div>
+      </article>
 
-    <!-- Weitere Blogbeiträge hier einfügen -->
+      <!-- Weitere Blogbeiträge hier einfügen -->
+    </div>
 
     <div id="about-content" class="content">
       <h2>Über uns</h2>
@@ -147,15 +233,17 @@
     <div id="contact-content" class="content">
       <h2>Kontakt</h2>
       <p style="margin-bottom: 20px;">Hier kannst du Kontaktdetails einfügen.</p>
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" style="margin-bottom: 10px;"><br>
-        <label for="email">E-Mail:</label>
-        <input type="email" id="email" name="email" style="margin-bottom: 10px;"><br>
-        <label for="message">Nachricht:</label><br>
-        <textarea id="message" name="message" rows="4" style="margin-bottom: 20px;"></textarea><br>
-        <input type="submit" value="Nachricht senden" style="background-color: #99CC99; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
-      </form>
+      <div class="form-container">
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name"><br>
+          <label for="email">E-Mail:</label>
+          <input type="email" id="email" name="email"><br>
+          <label for="message">Nachricht:</label><br>
+          <textarea id="message" name="message" rows="4"></textarea><br>
+          <input type="submit" value="Nachricht senden">
+        </form>
+      </div>
     </div>
   </main>
 
