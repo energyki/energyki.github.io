@@ -137,15 +137,6 @@
                 width: 48%;
             }
         }
-
-        .article-content {
-            display: none;
-            margin-top: 20px;
-        }
-
-        .article-content.active {
-            display: block;
-        }
     </style>
 </head>
 
@@ -170,8 +161,50 @@
             <h2>Willkommen auf unserem Blog!</h2>
             <p>Hier finden Sie die neuesten Artikel:</p>
 
-            <!-- Container for dynamically generated article previews -->
-            <div id="articlePreviewsContainer"></div>
+            <!-- Artikel Previews -->
+            <div class="article-preview">
+                <div class="card">
+                    <img src="https://example.com/article1-image.jpg" alt="Artikel Bild">
+                    <div class="card-content">
+                        <h3>Artikel 1</h3>
+                        <p>Kurze Beschreibung des Artikels 1...</p>
+                        <a href="#" class="button">Artikel lesen</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-preview">
+                <div class="card">
+                    <img src="https://example.com/article2-image.jpg" alt="Artikel Bild">
+                    <div class="card-content">
+                        <h3>Artikel 2</h3>
+                        <p>Kurze Beschreibung des Artikels 2...</p>
+                        <a href="#" class="button">Artikel lesen</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-preview">
+                <div class="card">
+                    <img src="https://example.com/article3-image.jpg" alt="Artikel Bild">
+                    <div class="card-content">
+                        <h3>Artikel 3</h3>
+                        <p>Kurze Beschreibung des Artikels 3...</p>
+                        <a href="#" class="button">Artikel lesen</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-preview">
+                <div class="card">
+                    <img src="https://example.com/article4-image.jpg" alt="Artikel Bild">
+                    <div class="card-content">
+                        <h3>Artikel 4</h3>
+                        <p>Kurze Beschreibung des Artikels 4...</p>
+                        <a href="#" class="button">Artikel lesen</a>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Articles Section -->
@@ -220,100 +253,28 @@
     </footer>
 
     <script>
-        document.getElementById("home-link").addEventListener("click", function (e) {
-            e.preventDefault();
+document.getElementById("home-link").addEventListener("click", function (e) {
+e.preventDefault();
             switchContent("home");
         });
-        document.getElementById("articles-link").addEventListener("click", function (e) {
-            e.preventDefault();
+document.getElementById("articles-link").addEventListener("click", function (e) {
+e.preventDefault();
             switchContent("articles");
         });
-        document.getElementById("contact-link").addEventListener("click", function (e) {
-            e.preventDefault();
+document.getElementById("contact-link").addEventListener("click", function (e) {
+e.preventDefault();
             switchContent("contact");
         });
-        document.getElementById("about-link").addEventListener("click", function (e) {
-            e.preventDefault();
+document.getElementById("about-link").addEventListener("click", function (e) {
+e.preventDefault();
             switchContent("about");
         });
 
         function switchContent(id) {
             const sections = document.querySelectorAll(".content");
-            sections.forEach(section => section.classList.remove("active"));
-            document.getElementById(id).classList.add("active");
+sections.forEach(section => section.classList.remove("active"));
+document.getElementById(id).classList.add("active");
         }
-
-        // Generate article previews dynamically
-        const articlePreviewsContainer = document.getElementById("articlePreviewsContainer");
-
-        // Sample article data
-        const articles = [
-            {
-                title: "Die vielversprechende Zukunft der Energiewende in Deutschland durch den Einsatz von Künstlicher Intelligenz",
-                description: "Kurze Beschreibung des Artikels...",
-                image: "https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_960_720.jpg",
-                content: "<p><strong>Einleitung</strong></p><p>Die Energiewende ist ein zentrales Anliegen in Deutschland, um den Ausstieg aus fossilen Brennstoffen zu fördern und erneuerbare Energien verstärkt zu nutzen. In diesem Artikel werden wir beleuchten, wie der strategische Einsatz von Künstlicher Intelligenz (KI) dabei helfen kann, die Energiewende in Deutschland erfolgreich voranzutreiben. Wir werden aufzeigen, wie KI zur Integration erneuerbarer Energien, zur Optimierung des Energieverbrauchs und zur Gewährleistung einer zuverlässigen Energieversorgung beitragen kann.</p> <!-- Rest of the article content goes here -->"
-            },
-            {
-                title: "Artikel 2",
-                description: "Kurze Beschreibung des Artikels 2...",
-                image: "placeholder-image.jpg",
-                content: "<p>Inhalt des Artikels 2...</p>"
-            },
-            {
-                title: "Artikel 3",
-                description: "Kurze Beschreibung des Artikels 3...",
-                image: "placeholder-image.jpg",
-                content: "<p>Inhalt des Artikels 3...</p>"
-            },
-            {
-                title: "Artikel 4",
-                description: "Kurze Beschreibung des Artikels 4...",
-                image: "placeholder-image.jpg",
-                content: "<p>Inhalt des Artikels 4...</p>"
-            }
-        ];
-
-        // Generate article previews
-        articles.forEach((article, index) => {
-            const articlePreview = document.createElement("div");
-            articlePreview.classList.add("article-preview");
-            const card = document.createElement("div");
-            card.classList.add("card");
-            const image = document.createElement("img");
-            image.src = article.image;
-            image.alt = "Artikelbild";
-            const cardContent = document.createElement("div");
-            cardContent.classList.add("card-content");
-            const title = document.createElement("h3");
-            title.textContent = article.title;
-            const description = document.createElement("p");
-description.textContent = article.description;
-            const readMoreButton = document.createElement("button");
-readMoreButton.classList.add("button");
-readMoreButton.textContent = "Read More";
-            const articleContent = document.createElement("div");
-articleContent.classList.add("article-content");
-articleContent.innerHTML = article.content;
-
-readMoreButton.addEventListener("click", function () {
-articleContent.classList.toggle("active");
-                if (readMoreButton.textContent === "Read More") {
-readMoreButton.textContent = "Read Less";
-                } else {
-readMoreButton.textContent = "Read More";
-                }
-            });
-
-cardContent.appendChild(title);
-cardContent.appendChild(description);
-cardContent.appendChild(readMoreButton);
-card.appendChild(image);
-card.appendChild(cardContent);
-card.appendChild(articleContent);
-articlePreview.appendChild(card);
-articlePreviewsContainer.appendChild(articlePreview);
-        });
 
         // Sticky Header
 window.onscroll = function () { makeHeaderSticky() };
