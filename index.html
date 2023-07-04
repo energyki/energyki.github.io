@@ -215,16 +215,28 @@
       var contactContent = document.getElementById('contact-content');
       var categoriesContainer = document.getElementById('categories-container');
 
-      aboutLink.addEventListener('click', function() {
+      aboutLink.addEventListener('click', function(event) {
+        event.preventDefault();
         aboutContent.classList.toggle('active');
+        if (aboutContent.classList.contains('active')) {
+          aboutContent.scrollIntoView({ behavior: 'smooth' });
+        }
       });
 
-      contactLink.addEventListener('click', function() {
+      contactLink.addEventListener('click', function(event) {
+        event.preventDefault();
         contactContent.classList.toggle('active');
+        if (contactContent.classList.contains('active')) {
+          contactContent.scrollIntoView({ behavior: 'smooth' });
+        }
       });
 
-      categoriesLink.addEventListener('click', function() {
+      categoriesLink.addEventListener('click', function(event) {
+        event.preventDefault();
         categoriesContainer.classList.toggle('open');
+        if (categoriesContainer.classList.contains('open')) {
+          categoriesContainer.scrollIntoView({ behavior: 'smooth' });
+        }
       });
     });
   </script>
