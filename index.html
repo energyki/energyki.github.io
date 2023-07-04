@@ -161,47 +161,50 @@
             <h2>Willkommen auf unserem Blog!</h2>
             <p>Hier finden Sie die neuesten Artikel:</p>
 
-            <!-- Artikel Previews -->
-            <div class="article-preview">
-                <div class="card">
-                    <img src="https://example.com/article1-image.jpg" alt="Artikel Bild">
-                    <div class="card-content">
-                        <h3>Artikel 1</h3>
-                        <p>Kurze Beschreibung des Artikels 1...</p>
-                        <a href="#" class="button">Artikel lesen</a>
+            <!-- Container for dynamically generated article previews -->
+            <div id="articlePreviewsContainer">
+                <!-- Artikel Previews -->
+                <div class="article-preview">
+                    <div class="card">
+                        <img src="https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_960_720.jpg" alt="Artikel 1 Bild">
+                        <div class="card-content">
+                            <h3>Die vielversprechende Zukunft der Energiewende in Deutschland durch den Einsatz von Künstlicher Intelligenz</h3>
+                            <p>Die Energiewende in Deutschland ist ein wichtiges Thema, das vor allem durch den Einsatz von Künstlicher Intelligenz vorangetrieben wird. Erfahren Sie, wie KI die Integration erneuerbarer Energien, die Optimierung des Energieverbrauchs und die Sicherung der Energieversorgung unterstützen kann.</p>
+                            <a href="#" class="button">Artikel lesen</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="article-preview">
-                <div class="card">
-                    <img src="https://example.com/article2-image.jpg" alt="Artikel Bild">
-                    <div class="card-content">
-                        <h3>Artikel 2</h3>
-                        <p>Kurze Beschreibung des Artikels 2...</p>
-                        <a href="#" class="button">Artikel lesen</a>
+                <div class="article-preview">
+                    <div class="card">
+                        <img src="https://cdn.pixabay.com/photo/2017/07/25/09/12/solar-panel-2539657_960_720.jpg" alt="Artikel 2 Bild">
+                        <div class="card-content">
+                            <h3>Solarenergie in Deutschland: Chancen und Herausforderungen</h3>
+                            <p>Erfahren Sie mehr über die Potenziale der Solarenergie in Deutschland und die Herausforderungen bei ihrer Integration in das Energiesystem. Welche Strategien sind am effektivsten, um Solarenergie zu fördern und zu nutzen?</p>
+                            <a href="#" class="button">Artikel lesen</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="article-preview">
-                <div class="card">
-                    <img src="https://example.com/article3-image.jpg" alt="Artikel Bild">
-                    <div class="card-content">
-                        <h3>Artikel 3</h3>
-                        <p>Kurze Beschreibung des Artikels 3...</p>
-                        <a href="#" class="button">Artikel lesen</a>
+                <div class="article-preview">
+                    <div class="card">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/08/04/29/denmark-1804918_960_720.jpg" alt="Artikel 3 Bild">
+                        <div class="card-content">
+                            <h3>Die Erfolgsstory der erneuerbaren Energien in Dänemark</h3>
+                            <p>Dänemark hat sich als Vorreiter in Sachen erneuerbare Energien etabliert. Erfahren Sie, welche Strategien und Maßnahmen dazu geführt haben und welche Lehren andere Länder daraus ziehen können.</p>
+                            <a href="#" class="button">Artikel lesen</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="article-preview">
-                <div class="card">
-                    <img src="https://example.com/article4-image.jpg" alt="Artikel Bild">
-                    <div class="card-content">
-                        <h3>Artikel 4</h3>
-                        <p>Kurze Beschreibung des Artikels 4...</p>
-                        <a href="#" class="button">Artikel lesen</a>
+                <div class="article-preview">
+                    <div class="card">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/18/17/42/wind-turbines-1839725_960_720.jpg" alt="Artikel 4 Bild">
+                        <div class="card-content">
+                            <h3>Windenergie auf dem Vormarsch: Die Entwicklung in Europa</h3>
+                            <p>Die Windenergie spielt eine immer größere Rolle in der europäischen Energieversorgung. Erfahren Sie mehr über die aktuellen Trends, Herausforderungen und Lösungen bei der Nutzung von Windenergie in Europa.</p>
+                            <a href="#" class="button">Artikel lesen</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -277,7 +280,9 @@ document.getElementById(id).classList.add("active");
         }
 
         // Sticky Header
-window.onscroll = function () { makeHeaderSticky() };
+window.onscroll = function () {
+            makeHeaderSticky()
+        };
 
         var header = document.querySelector("header");
         var sticky = header.offsetTop;
@@ -289,7 +294,6 @@ header.classList.add("sticky");
 header.classList.remove("sticky");
             }
         }
-
     </script>
 
     <style>
