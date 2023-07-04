@@ -7,7 +7,8 @@
     <title>Kunst, KI und erneuerbare Energien Blog</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        html, body {
+        html,
+        body {
             height: 100%;
             margin: 0;
             padding: 0;
@@ -48,7 +49,8 @@
         }
 
         .container {
-            min-height: calc(100% - 80px); /* Subtract header and footer height */
+            min-height: calc(100% - 80px);
+            /* Subtract header and footer height */
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
@@ -135,6 +137,15 @@
                 width: 48%;
             }
         }
+
+        .article-content {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .article-content.active {
+            display: block;
+        }
     </style>
 </head>
 
@@ -169,30 +180,6 @@
             <p>Hier finden Sie alle unsere Artikel zu Kunst, KI und erneuerbaren Energien.</p>
 
             <!-- Beispiel für einen Artikel -->
-            <div class="card">
-                <h2 style="font-size: 28px; letter-spacing: 1px;">Die vielversprechende Zukunft der Energiewende in Deutschland durch den Einsatz von Künstlicher Intelligenz</h2>
-                <img src="https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_960_720.jpg" alt="Bild des Artikels">
-                <div class="card-content">
-                    <p><strong>Einleitung</strong></p>
-                    <p>Die Energiewende ist ein zentrales Anliegen in Deutschland, um den Ausstieg aus fossilen Brennstoffen zu fördern und erneuerbare Energien verstärkt zu nutzen. In diesem Artikel werden wir beleuchten, wie der strategische Einsatz von Künstlicher Intelligenz (KI) dabei helfen kann, die Energiewende in Deutschland erfolgreich voranzutreiben. Wir werden aufzeigen, wie KI zur Integration erneuerbarer Energien, zur Optimierung des Energieverbrauchs und zur Gewährleistung einer zuverlässigen Energieversorgung beitragen kann.</p>
-
-                    <p><strong>Integration erneuerbarer Energien</strong></p>
-                    <p>Die Integration erneuerbarer Energien in das bestehende Energiesystem ist eine Herausforderung aufgrund der Volatilität und Abhängigkeit von Wetterbedingungen. Hier kann KI eine entscheidende Rolle spielen. Durch die Analyse umfangreicher Datenmengen wie Wetterdaten, Stromerzeugungsdaten und Verbrauchsdaten ermöglicht es KI, präzise Vorhersagen über die Energieerzeugung aus erneuerbaren Quellen zu treffen. Diese Vorhersagen ermöglichen eine bessere Koordination der Energieerzeugung und des -bedarfs, um Engpässe zu vermeiden und eine stabile Energieversorgung sicherzustellen.</p>
-
-                    <p><strong>Optimierung des Energieverbrauchs</strong></p>
-                    <p>Die Optimierung des Energieverbrauchs spielt eine wichtige Rolle bei der Effizienzsteigerung und Kostenreduzierung. Hier kann KI helfen, indem sie große Mengen an Verbrauchsdaten analysiert und Muster erkennt. Mit Hilfe von Algorithmen zur Laststeuerung und -vorhersage können Unternehmen und Haushalte ihren Energieverbrauch optimieren und somit zur Stabilisierung des Stromnetzes beitragen. Zusätzlich kann KI-basierte Systeme Verbraucherempfehlungen geben, um ein Bewusstsein für einen nachhaltigen Energieverbrauch zu schaffen.</p>
-
-                    <p><strong>Sicherung der Energieversorgung</strong></p>
-                    <p>Die Gewährleistung einer zuverlässigen Energieversorgung ist ein entscheidender Faktor für eine erfolgreiche Energiewende. KI kann bei der Überwachung und Optimierung des Stromnetzes eine wichtige Rolle spielen. Durch Echtzeitanalysen von Netzdaten können potenzielle Störungen frühzeitig erkannt und Maßnahmen zur Vermeidung von Ausfällen ergriffen werden. Darüber hinaus ermöglicht es KI, Engpässe in der Energieerzeugung zu prognostizieren und zu vermeiden, indem sie die Erzeugungsanlagen entsprechend steuert und die Integration erneuerbarer Energien erleichtert.</p>
-
-                    <p><strong>Herausforderungen und Chancen</strong></p>
-                    <p>Neben den vielfältigen Vorteilen von KI in der Energiewende müssen auch Herausforderungen beachtet werden. Datenschutz, Datensicherheit und die Verfügbarkeit hochwertiger Daten sind zentrale Themen, die angegangen werden müssen. Die Zusammenarbeit zwischen Wirtschaft, Politik und Forschung ist von entscheidender Bedeutung, um die Potenziale von KI vollständig zu erschließen und sicherzustellen, dass die Technologie nachhaltig eingesetzt wird.</p>
-
-                    <p><strong>Fazit</strong></p>
-                    <p>Der gezielte Einsatz von Künstlicher Intelligenz bietet vielversprechende Möglichkeiten für eine erfolgreiche Energiewende in Deutschland. KI kann die Integration erneuerbarer Energien unterstützen, den Energieverbrauch optimieren und die Sicherheit der Energieversorgung gewährleisten. Indem wir die Herausforderungen angehen und die Chancen nutzen, können wir gemeinsam eine nachhaltige Zukunft gestalten und einen wichtigen Beitrag zum Klimaschutz leisten. Die Energiewende in Deutschland wird durch den strategischen Einsatz von KI einen entscheidenden Schub erhalten.</p>
-                </div>
-            </div>
-
             <div class="card">
                 <h3>Titel des Artikels</h3>
                 <img src="placeholder-image.jpg" alt="Bild des Artikels">
@@ -262,47 +249,68 @@
         // Sample article data
         const articles = [
             {
-                title: "Artikel 1",
-                description: "Kurze Beschreibung des Artikels 1...",
-                image: "placeholder-image.jpg"
+                title: "Die vielversprechende Zukunft der Energiewende in Deutschland durch den Einsatz von Künstlicher Intelligenz",
+                description: "Kurze Beschreibung des Artikels...",
+                image: "https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_960_720.jpg",
+                content: "<p><strong>Einleitung</strong></p><p>Die Energiewende ist ein zentrales Anliegen in Deutschland, um den Ausstieg aus fossilen Brennstoffen zu fördern und erneuerbare Energien verstärkt zu nutzen. In diesem Artikel werden wir beleuchten, wie der strategische Einsatz von Künstlicher Intelligenz (KI) dabei helfen kann, die Energiewende in Deutschland erfolgreich voranzutreiben. Wir werden aufzeigen, wie KI zur Integration erneuerbarer Energien, zur Optimierung des Energieverbrauchs und zur Gewährleistung einer zuverlässigen Energieversorgung beitragen kann.</p> <!-- Rest of the article content goes here -->"
             },
             {
                 title: "Artikel 2",
                 description: "Kurze Beschreibung des Artikels 2...",
-                image: "placeholder-image.jpg"
+                image: "placeholder-image.jpg",
+                content: "<p>Inhalt des Artikels 2...</p>"
             },
             {
                 title: "Artikel 3",
                 description: "Kurze Beschreibung des Artikels 3...",
-                image: "placeholder-image.jpg"
+                image: "placeholder-image.jpg",
+                content: "<p>Inhalt des Artikels 3...</p>"
             },
             {
                 title: "Artikel 4",
                 description: "Kurze Beschreibung des Artikels 4...",
-                image: "placeholder-image.jpg"
+                image: "placeholder-image.jpg",
+                content: "<p>Inhalt des Artikels 4...</p>"
             }
         ];
 
         // Generate article previews
-articles.forEach(article => {
+        articles.forEach((article, index) => {
             const articlePreview = document.createElement("div");
-articlePreview.classList.add("article-preview");
+            articlePreview.classList.add("article-preview");
             const card = document.createElement("div");
-card.classList.add("card");
+            card.classList.add("card");
             const image = document.createElement("img");
-image.src = article.image;
-image.alt = "Artikelbild";
+            image.src = article.image;
+            image.alt = "Artikelbild";
             const cardContent = document.createElement("div");
-cardContent.classList.add("card-content");
+            cardContent.classList.add("card-content");
             const title = document.createElement("h3");
-title.textContent = article.title;
+            title.textContent = article.title;
             const description = document.createElement("p");
 description.textContent = article.description;
+            const readMoreButton = document.createElement("button");
+readMoreButton.classList.add("button");
+readMoreButton.textContent = "Read More";
+            const articleContent = document.createElement("div");
+articleContent.classList.add("article-content");
+articleContent.innerHTML = article.content;
+
+readMoreButton.addEventListener("click", function () {
+articleContent.classList.toggle("active");
+                if (readMoreButton.textContent === "Read More") {
+readMoreButton.textContent = "Read Less";
+                } else {
+readMoreButton.textContent = "Read More";
+                }
+            });
 
 cardContent.appendChild(title);
 cardContent.appendChild(description);
+cardContent.appendChild(readMoreButton);
 card.appendChild(image);
 card.appendChild(cardContent);
+card.appendChild(articleContent);
 articlePreview.appendChild(card);
 articlePreviewsContainer.appendChild(articlePreview);
         });
@@ -329,7 +337,8 @@ header.classList.remove("sticky");
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: 1000; /* Make sure the header stays on top of other content */
+            z-index: 1000;
+            /* Make sure the header stays on top of other content */
         }
 
         /* Add some padding to the content so it doesn't get hidden under the sticky header */
