@@ -17,11 +17,16 @@
     }
 
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       background-color: #333;
       color: #fff;
       padding: 20px;
       text-align: center;
       border-radius: 0 0 20px 20px;
+      z-index: 1;
     }
 
     nav ul {
@@ -45,7 +50,7 @@
     }
 
     main {
-      margin: 20px;
+      margin: 120px 20px 20px;
     }
 
     article {
@@ -171,14 +176,9 @@
 
     .categories-container {
       margin-top: 20px;
-      display: none;
       background-color: #f2f2f2;
       padding: 20px;
       border-radius: 5px;
-    }
-
-    .categories-container.open {
-      display: block;
     }
 
     .category-title {
@@ -205,6 +205,16 @@
     .category-list li a:hover {
       color: #666;
     }
+
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -214,6 +224,7 @@
       var aboutContent = document.getElementById('about-content');
       var contactContent = document.getElementById('contact-content');
       var categoriesContainer = document.getElementById('categories-container');
+      var header = document.querySelector('header');
 
       aboutLink.addEventListener('click', function(event) {
         event.preventDefault();
@@ -238,10 +249,23 @@
           categoriesContainer.scrollIntoView({ behavior: 'smooth' });
         }
       });
+
+      window.addEventListener('scroll', function() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > 0) {
+          header.classList.add('scroll');
+        } else {
+          header.classList.remove('scroll');
+        }
+      });
     });
   </script>
 </head>
 <body>
+  <video autoplay muted loop>
+    <source src="background-video.mp4" type="video/mp4">
+  </video>
+
   <header>
     <h1 style="font-size: 36px; letter-spacing: 4px; color: #F9F9F9;">Willkommen zum Kunst, KI und erneuerbare Energien Blog</h1>
     <nav>
@@ -285,6 +309,16 @@
       <img src="about-us.jpg" alt="Über uns" style="width: 100%; max-width: 600px; border-radius: 5px;">
     </div>
 
+    <div id="categories-container" class="categories-container">
+      <h2>Kategorien</h2>
+      <ul class="category-list">
+        <li><a href="#">Titel des Blogbeitrags 1</a></li>
+        <li><a href="#">Titel des Blogbeitrags 2</a></li>
+        <li><a href="#">Titel des Blogbeitrags 3</a></li>
+        <!-- Weitere Blogbeiträge hier einfügen -->
+      </ul>
+    </div>
+
     <div id="contact-content" class="content">
       <h2>Kontakt</h2>
       <p style="margin-bottom: 20px;">Hier kannst du Kontaktdetails einfügen.</p>
@@ -299,16 +333,6 @@
           <input type="submit" value="Nachricht senden">
         </form>
       </div>
-    </div>
-
-    <div id="categories-container" class="categories-container">
-      <h2>Kategorien</h2>
-      <ul class="category-list">
-        <li><a href="#">Titel des Blogbeitrags 1</a></li>
-        <li><a href="#">Titel des Blogbeitrags 2</a></li>
-        <li><a href="#">Titel des Blogbeitrags 3</a></li>
-        <!-- Weitere Blogbeiträge hier einfügen -->
-      </ul>
     </div>
   </main>
 
