@@ -100,14 +100,14 @@ nav ul li a:hover {
         }
 
 .profile-img {
-            border-radius: 50%;
+border-radius: 50%;
         }
 
 footer {
             text-align: center;
             padding: 20px;
             background-color: #34495e;
-            color: white;
+color: white;
         }
 
 #home {
@@ -159,46 +159,8 @@ footer {
             <h2>Willkommen auf unserem Blog!</h2>
             <p>Hier finden Sie die neuesten Artikel:</p>
 
-            <!-- Artikel Previews -->
-            <div class="article-preview">
-                <div class="card">
-                    <img src="placeholder-image.jpg" alt="Artikel Bild">
-                    <div class="card-content">
-                        <h3>Artikel 1</h3>
-                        <p>Kurze Beschreibung des Artikels...</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="article-preview">
-                <div class="card">
-                    <img src="placeholder-image.jpg" alt="Artikel Bild">
-                    <div class="card-content">
-                        <h3>Artikel 2</h3>
-                        <p>Kurze Beschreibung des Artikels...</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="article-preview">
-                <div class="card">
-                    <img src="placeholder-image.jpg" alt="Artikel Bild">
-                    <div class="card-content">
-                        <h3>Artikel 3</h3>
-                        <p>Kurze Beschreibung des Artikels...</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="article-preview">
-                <div class="card">
-                    <img src="placeholder-image.jpg" alt="Artikel Bild">
-                    <div class="card-content">
-                        <h3>Artikel 4</h3>
-                        <p>Kurze Beschreibung des Artikels...</p>
-                    </div>
-                </div>
-            </div>
+            <!-- Container for dynamically generated article previews -->
+            <div id="articlePreviewsContainer"></div>
         </section>
 
         <!-- Articles Section -->
@@ -207,9 +169,9 @@ footer {
             <p>Hier finden Sie alle unsere Artikel zu Kunst, KI und erneuerbaren Energien.</p>
 
             <!-- Beispiel für einen Artikel -->
-           <div class="card">
-    <h2 style="font-size: 28px; letter-spacing: 2px;">Die vielversprechende Zukunft der Energiewende in Deutschland durch den Einsatz von Künstlicher Intelligenz</h2>
-    <img src="bild.jpg" alt="Bild des Artikels">
+            <div class="card">
+    <h2 style="font-size: 28px; letter-spacing: 1px;">Die vielversprechende Zukunft der Energiewende in Deutschland durch den Einsatz von Künstlicher Intelligenz</h2>
+    <img src="https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_960_720.jpg" alt="Bild des Artikels">
     <div class="card-content">
         <p><strong>Einleitung</strong></p>
         <p>Die Energiewende ist ein zentrales Anliegen in Deutschland, um den Ausstieg aus fossilen Brennstoffen zu fördern und erneuerbare Energien verstärkt zu nutzen. In diesem Artikel werden wir beleuchten, wie der strategische Einsatz von Künstlicher Intelligenz (KI) dabei helfen kann, die Energiewende in Deutschland erfolgreich voranzutreiben. Wir werden aufzeigen, wie KI zur Integration erneuerbarer Energien, zur Optimierung des Energieverbrauchs und zur Gewährleistung einer zuverlässigen Energieversorgung beitragen kann.</p>
@@ -230,7 +192,6 @@ footer {
         <p>Der gezielte Einsatz von Künstlicher Intelligenz bietet vielversprechende Möglichkeiten für eine erfolgreiche Energiewende in Deutschland. KI kann die Integration erneuerbarer Energien unterstützen, den Energieverbrauch optimieren und die Sicherheit der Energieversorgung gewährleisten. Indem wir die Herausforderungen angehen und die Chancen nutzen, können wir gemeinsam eine nachhaltige Zukunft gestalten und einen wichtigen Beitrag zum Klimaschutz leisten. Die Energiewende in Deutschland wird durch den strategischen Einsatz von KI einen entscheidenden Schub erhalten.</p>
     </div>
 </div>
-
             
             <div class="card">
                 <h3>Titel des Artikels</h3>
@@ -295,6 +256,57 @@ sections.forEach(section => section.classList.remove("active"));
 document.getElementById(id).classList.add("active");
         }
         
+        // Generate article previews dynamically
+        const articlePreviewsContainer = document.getElementById("articlePreviewsContainer");
+
+        // Sample article data
+        const articles = [
+            {
+                title: "Artikel 1",
+                description: "Kurze Beschreibung des Artikels 1...",
+                image: "placeholder-image.jpg"
+            },
+            {
+                title: "Artikel 2",
+                description: "Kurze Beschreibung des Artikels 2...",
+                image: "placeholder-image.jpg"
+            },
+            {
+                title: "Artikel 3",
+                description: "Kurze Beschreibung des Artikels 3...",
+                image: "placeholder-image.jpg"
+            },
+            {
+                title: "Artikel 4",
+                description: "Kurze Beschreibung des Artikels 4...",
+                image: "placeholder-image.jpg"
+            }
+        ];
+
+        // Generate article previews
+articles.forEach(article => {
+            const articlePreview = document.createElement("div");
+articlePreview.classList.add("article-preview");
+            const card = document.createElement("div");
+card.classList.add("card");
+            const image = document.createElement("img");
+image.src = article.image;
+image.alt = "Artikelbild";
+            const cardContent = document.createElement("div");
+cardContent.classList.add("card-content");
+            const title = document.createElement("h3");
+title.textContent = article.title;
+            const description = document.createElement("p");
+description.textContent = article.description;
+
+cardContent.appendChild(title);
+cardContent.appendChild(description);
+card.appendChild(image);
+card.appendChild(cardContent);
+articlePreview.appendChild(card);
+articlePreviewsContainer.appendChild(articlePreview);
+        });
+
         // Sticky Header
 window.onscroll = function () { makeHeaderSticky() };
 
