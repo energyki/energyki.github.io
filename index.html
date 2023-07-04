@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kunst, KI und erneuerbare Energien Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <style>
     * {
       box-sizing: border-box;
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f7f7f7;
@@ -21,7 +23,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      background-color: #333;
+      background-color: #4A90E2;
       color: #fff;
       padding: 20px;
       text-align: center;
@@ -41,12 +43,15 @@
       color: #fff;
       text-decoration: none;
       padding: 10px;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s, transform 0.3s;
       border-radius: 20px;
+      display: flex;
+      align-items: center;
     }
 
     nav ul li a:hover {
-      background-color: #666;
+      background-color: #357ABD;
+      transform: scale(1.1);
     }
 
     main {
@@ -59,6 +64,11 @@
       padding: 20px;
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    article:hover {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     h1, h2 {
@@ -72,7 +82,7 @@
     }
 
     footer {
-      background-color: #333;
+      background-color: #4A90E2;
       color: #fff;
       padding: 20px;
       text-align: center;
@@ -100,42 +110,6 @@
       gap: 20px;
     }
 
-    .card {
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-
-    .card img {
-      width: 100%;
-      max-height: 200px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 20px;
-    }
-
-    .card-title {
-      font-size: 24px;
-      margin-top: 0;
-    }
-
-    .card-date {
-      color: #999;
-      margin-bottom: 10px;
-    }
-
-    .card-author {
-      color: #999;
-      margin-bottom: 10px;
-    }
-
-    .card-text {
-      color: #666;
-    }
-
     .form-container {
       max-width: 500px;
       margin: 0 auto;
@@ -145,203 +119,76 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    .form-container label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .form-container input[type="text"],
-    .form-container input[type="email"],
-    .form-container textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .form-container textarea {
-      height: 100px;
-    }
-
     .form-container input[type="submit"] {
-      background-color: #99CC99;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
       cursor: pointer;
-    }
-
-    .categories-container {
-      margin-top: 20px;
-      background-color: #f2f2f2;
-      padding: 20px;
+      background-color: #4A90E2;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
       border-radius: 5px;
-      display: none;
+      transition: transform 0.3s;
     }
 
-    .category-title {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .category-list {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .category-list li {
-      margin-bottom: 10px;
-    }
-
-    .category-list li a {
-      color: #333;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .category-list li a:hover {
-      color: #666;
-    }
-
-    video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
+    .form-container input[type="submit"]:hover {
+      transform: scale(1.05);
     }
   </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var aboutLink = document.getElementById('about-link');
-      var contactLink = document.getElementById('contact-link');
-      var categoriesLink = document.getElementById('categories-link');
-      var aboutContent = document.getElementById('about-content');
-      var contactContent = document.getElementById('contact-content');
-      var categoriesContainer = document.getElementById('categories-container');
-      var header = document.querySelector('header');
-
-      aboutLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        aboutContent.classList.toggle('active');
-        if (aboutContent.classList.contains('active')) {
-          aboutContent.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-
-      contactLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        contactContent.classList.toggle('active');
-        if (contactContent.classList.contains('active')) {
-          contactContent.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-
-      categoriesLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        categoriesContainer.classList.toggle('open');
-        if (categoriesContainer.classList.contains('open')) {
-          categoriesContainer.style.display = 'block';
-          categoriesContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-          categoriesContainer.style.display = 'none';
-        }
-      });
-
-      window.addEventListener('scroll', function() {
-        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > 0) {
-          header.classList.add('scroll');
-        } else {
-          header.classList.remove('scroll');
-        }
-      });
-    });
-  </script>
 </head>
 <body>
-  <video autoplay muted loop>
-    <source src="background-video.mp4" type="video/mp4">
-  </video>
-
   <header>
-    <h1 style="font-size: 36px; letter-spacing: 4px; color: #F9F9F9;">Willkommen zum Kunst, KI und erneuerbare Energien Blog</h1>
     <nav>
       <ul>
-        <li><a href="#" style="background-color: #FF6666;">Startseite</a></li>
-        <li><a id="about-link" href="#" style="background-color: #66CCCC;">Über uns</a></li>
-        <li><a id="categories-link" href="#" style="background-color: #FFCC66;">Kategorien</a></li>
-        <li><a id="contact-link" href="#" style="background-color: #99CC99;">Kontakt</a></li>
+        <li>
+          <a id="home-link" href="#">
+            <i class="fas fa-home"></i> Startseite
+          </a>
+        </li>
+        <li>
+          <a id="articles-link" href="#">
+            <i class="fas fa-newspaper"></i> Artikel
+          </a>
+        </li>
+        <li>
+          <a id="contact-link" href="#">
+            <i class="fas fa-envelope"></i> Kontakt
+          </a>
+        </li>
+        <li>
+          <a id="about-link" href="#">
+            <i class="fas fa-info-circle"></i> Über uns
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
-
   <main>
-    <div class="grid">
-      <article class="card">
-        <img src="bild.jpg" alt="Bildbeschreibung">
-        <div class="card-content">
-          <h2 class="card-title">Titel des Blogbeitrags</h2>
-          <p class="card-date">Datum des Beitrags</p>
-          <p class="card-author">Autor des Beitrags</p>
-          <p class="card-text">Text des Blogbeitrags hier...</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="bild.jpg" alt="Bildbeschreibung">
-        <div class="card-content">
-          <h2 class="card-title">Titel des nächsten Blogbeitrags</h2>
-          <p class="card-date">Datum des Beitrags</p>
-          <p class="card-author">Autor des Beitrags</p>
-          <p class="card-text">Text des Blogbeitrags hier...</p>
-        </div>
-      </article>
-
-      <!-- Weitere Blogbeiträge hier einfügen -->
+    <div id="home" class="content active">
+      <!-- ... -->
     </div>
-
-    <div id="about-content" class="content">
-      <h2>Über uns</h2>
-      <p style="margin-bottom: 20px;">Hier kannst du Informationen über uns einfügen.</p>
-      <img src="about-us.jpg" alt="Über uns" style="width: 100%; max-width: 600px; border-radius: 5px;">
-    </div>
-
-    <div id="contact-content" class="content">
-      <h2>Kontakt</h2>
-      <p style="margin-bottom: 20px;">Hier kannst du Kontaktdetails einfügen.</p>
-      <div class="form-container">
-        <form>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name"><br>
-          <label for="email">E-Mail:</label>
-          <input type="email" id="email" name="email"><br>
-          <label for="message">Nachricht:</label><br>
-          <textarea id="message" name="message" rows="4"></textarea><br>
-          <input type="submit" value="Nachricht senden">
-        </form>
+    <div id="articles" class="content">
+      <div class="grid">
+        <article>
+          <h2>Der Einfluss von KI auf erneuerbare Energien</h2>
+          <p>...</p>
+        </article>
+        <article>
+          <h2>Kunst und KI: Eine revolutionäre Kombination</h2>
+          <p>...</p>
+        </article>
+        <!-- ... -->
       </div>
     </div>
+    <div id="contact" class="content">
+      <div class="form-container">
+        <!-- ... -->
+      </div>
+    </div>
+    <div id="about" class="content">
+      <!-- ... -->
+    </div>
   </main>
-
-  <div id="categories-container" class="categories-container">
-    <h2>Kategorien</h2>
-    <ul class="category-list">
-      <li><a href="#">Titel des Blogbeitrags 1</a></li>
-      <li><a href="#">Titel des Blogbeitrags 2</a></li>
-      <li><a href="#">Titel des Blogbeitrags 3</a></li>
-      <!-- Weitere Blogbeiträge hier einfügen -->
-    </ul>
-  </div>
-
   <footer>
-    <p>© 2023 Kunst, KI und erneuerbare Energien Blog. Alle Rechte vorbehalten.</p>
+    <p>© 2023 KKE Blog. Alle Rechte vorbehalten.</p>
   </footer>
 </body>
 </html>
