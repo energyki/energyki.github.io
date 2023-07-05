@@ -336,15 +336,15 @@ footer {
     <p>Tauchen Sie ein in die Welt von ESG, Künstlicher Intelligenz und Erneuerbaren Energien durch sorgfältig ausgewählte Artikel, die aktuelle Entwicklungen und Innovationen beleuchten. Entdecken und inspirieren Sie sich hier!.</p>
 
     <!-- Article 1 -->
-    <div class="card" id="article-1">
-      <h3>Die Bedeutung erneuerbarer Energien für Deutschlands Energiewende</h3>
-      <p>Nur ein Auszug des Artikels wird angezeigt. Klicken Sie auf "Mehr erfahren", um den gesamten Artikel zu lesen.</p>
-      <button class="button" onclick="toggleArticle('article-1')">Mehr erfahren</button>
-      <div class="article-content hidden">
-        <p>Die Energiewende in Deutschland spielt eine entscheidende Rolle im Kampf gegen den Klimawandel und die Reduzierung von Treibhausgasemissionen. Deutschland hat sich ehrgeizige Ziele gesetzt, um seinen Energiebedarf aus erneuerbaren Quellen zu decken und die Abhängigkeit von fossilen Brennstoffen zu verringern. In diesem Artikel werden wir die Bedeutung erneuerbarer Energien für Deutschlands Energiewende eingehend untersuchen.</p>
-        <img src="https://cdn.pixabay.com/photo/2017/03/13/07/34/photovoltaic-2138992_1280.jpg" alt="Bild des Artikels">
-      </div>
-    </div>
+        <div class="card" id="article-1">
+          <h3>Die Bedeutung erneuerbarer Energien für Deutschlands Energiewende</h3>
+          <p>Nur ein Auszug des Artikels wird angezeigt. Klicken Sie auf "Mehr erfahren", um den gesamten Artikel zu lesen.</p>
+          <button class="button" onclick="toggleArticle('article-1')">Mehr erfahren</button>
+          <div class="article-content hidden" id="article-1-content">
+            <p>Die Energiewende in Deutschland spielt eine entscheidende Rolle im Kampf gegen den Klimawandel und die Reduzierung von Treibhausgasemissionen. Deutschland hat sich ehrgeizige Ziele gesetzt, um seinen Energiebedarf aus erneuerbaren Quellen zu decken und die Abhängigkeit von fossilen Brennstoffen zu verringern. In diesem Artikel werden wir die Bedeutung erneuerbarer Energien für Deutschlands Energiewende eingehend untersuchen.</p>
+            <img src="https://cdn.pixabay.com/photo/2017/03/13/07/34/photovoltaic-2138992_1280.jpg" alt="Bild des Artikels">
+          </div>
+        </div>
 
     <!-- Article 2 -->
     <div class="card" id="article-2">
@@ -419,7 +419,7 @@ footer {
 
   <script>
     function toggleArticle(articleId) {
-      const articleContent = document.getElementById(articleId).querySelector('.article-content');
+      const articleContent = document.getElementById(articleId + '-content');
 articleContent.classList.toggle('hidden');
     }
 
