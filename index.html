@@ -257,30 +257,54 @@ footer {
     }
 
     /* New styles for the sidebar tool */
+h1 {
+  color: #333;
+}
 .sidebar {
       position: sticky;
       top: 20px;
       float: left;
       width: 20%;
       margin-right: 5%;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
+
+sidebar h2 {
+  color: #666;
+  font-size: 18px;
+  margin-top: 0;
+}
 
 .sidebar ul {
-      list-style: none;
-      padding: 0;
-    }
+  list-style-type: none;
+  padding: 0;
+}
 
-.sidebar ul li a {
-      display: block;
-      padding: 10px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      color: #34495e;
-    }
+.sidebar li {
+  margin-bottom: 10px;
+}
 
-.sidebar ul li a:hover {
-      background-color: #f0f0f0;
-    }
+.sidebar a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.sidebar a:hover {
+  color: #007bff;
+}
+
+.main-content {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.main-content p {
+  line-height: 1.5;
+}
 
 .articles-container {
       width: 75%;
