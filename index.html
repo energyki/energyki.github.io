@@ -15,15 +15,52 @@ body {
     }
 
 header {
-      background-color: #34495e;
+      background-color: #333;
       padding: 20px;
       text-align: center;
-      color: white;
+      color: #fff;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
-    
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+.navigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+.navigation li {
+    margin-right: 10px;
+  }
+
+.navigation li:last-child {
+    margin-right: 0;
+  }
+
+.navigation li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+
+.navigation li a:hover {
+    background-color: #555;
+}
+  
 .contact-container {
   text-align: center;
 }
@@ -312,9 +349,10 @@ footer {
 
 <body>
   <header>
-<h1>EnergyKI - ESG KI und Erneuerbare Energien</h1>
-    <nav>
-      <ul>
+<div class="header-content">
+      <div class="logo">EnergyKI - ESG KI und Erneuerbare Energien</div>
+      <nav>
+        <ul class="navigation">
         <li><a href="#" id="articles-link"><i class="fas fa-newspaper"></i> Artikel</a></li>
         <li><a href="#" id="contact-link"><i class="fas fa-envelope"></i> Kontakt</a></li>
         <li><a href="#" id="about-link"><i class="fas fa-user"></i> Über uns</a></li>
