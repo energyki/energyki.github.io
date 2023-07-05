@@ -3,14 +3,19 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>EnergyKI - ESG KI und Erneuerbare Energien</title>
+<title>EnergyKI - ESG KI und Erneuerbare Energien </title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    /* ... previous CSS styles */
+<style>
+html,
+body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
 
-    /* Enhanced Header Bar Styles */
-    header {
-      background-color: #141414;
+header {
+      background-color: #34495e;
       padding: 20px;
       text-align: center;
       color: white;
@@ -18,49 +23,164 @@
       top: 0;
       z-index: 1000;
     }
+    
+.contact-container {
+  text-align: center;
+}
 
-    header h1 {
-      font-size: 30px;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-      text-transform: uppercase;
+.contact-container h2 {
+  margin-bottom: 10px;
+}
+
+.contact-container p {
+  line-height: 1.5;
+  margin-bottom: 10px;
+  
+}
+.hidden {
+  display: none;
+}
+  
+.contact-container ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.contact-container ul li {
+  margin-bottom: 10px;
+}
+
+.contact-container ul li strong {
+  font-weight: bold;
+}
+
+.contact-container ul li a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+.contact-container ul li a:hover {
+  text-decoration: underline;
+}
+
+.articles-container {
+  width: 75%;
+  float: right;
+}
+
+.card {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.button {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2980b9;
+}
+    
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.profile-container {
+  margin-top: 20px;
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.text-container {
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.text-container p {
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+nav ul {
+      list-style: none;
+      padding: 0;
     }
 
-    nav ul li a {
+nav ul li {
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+nav ul li a {
       color: white;
       text-decoration: none;
-      font-size: 16px;
-      padding: 10px 15px;
+      font-size: 20px;
+      padding: 5px 10px;
       border-radius: 5px;
       transition: background-color 0.3s ease;
-      border: 1px solid transparent;
     }
 
-    nav ul li a:hover {
-      background-color: #2c2c2c;
-      border: 1px solid #3498db;
+nav ul li a:hover {
+      background-color: #2c3e50;
     }
 
-    /* Enhanced Sections Styles */
-    .container {
+.container {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
       position: relative;
-      background-color: #f8f8f8;
     }
 
-    .content {
+.content {
       display: none;
       padding: 20px;
-      background-color: #f8f8f8;
     }
 
-    .content.active {
+.content.active {
       display: block;
     }
 
-    .card {
+.card {
       background-color: #ffffff;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -69,28 +189,20 @@
       transition: box-shadow 0.3s ease;
     }
 
-    .card:hover {
+.card:hover {
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
 
-    .card h3 {
-      font-size: 24px;
-      margin-bottom: 10px;
-      color: #3498db;
+.card-content {
+      padding: 20px;
     }
 
-    .card p {
-      line-height: 1.5;
-      margin-bottom: 20px;
-      color: #555555;
-    }
-
-    .card img {
+.card img {
       max-width: 100%;
       border-radius: 5px;
     }
 
-    .button {
+.button {
       display: inline-block;
       background-color: #3498db;
       color: white;
@@ -100,129 +212,112 @@
       transition: background-color 0.3s ease;
     }
 
-    .button:hover {
+.button:hover {
       background-color: #2980b9;
     }
 
-    .profile-img {
+.profile-img {
       border-radius: 50%;
     }
 
-    footer {
+footer {
       text-align: center;
       padding: 20px;
-      background-color: #141414;
+      background-color: #34495e;
       color: white;
       position: sticky;
       bottom: 0;
       width: 100%;
     }
 
-    /* ... previous media queries */
+#home {
+      text-align: center;
+      padding-top: 20px;
+    }
 
-    /* Enhanced Styles for the Sidebar Tool */
-    .sidebar {
+#home i {
+      font-size: 48px;
+      color: #3498db;
+    }
+
+#home h2 {
+      margin-top: 20px;
+    }
+
+.article-preview {
+      display: inline-block;
+      width: 23%;
+      margin: 1%;
+    }
+
+    @media screen and (max-width: 768px) {
+.article-preview {
+        width: 48%;
+      }
+    }
+
+    /* New styles for the sidebar tool */
+.sidebar {
       position: sticky;
       top: 20px;
       float: left;
       width: 20%;
       margin-right: 5%;
-      background-color: #141414;
-      color: white;
     }
 
-    .sidebar ul li a {
+.sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+.sidebar ul li a {
       display: block;
       padding: 10px;
       text-decoration: none;
       transition: background-color 0.3s ease;
-      color: white;
-      border-bottom: 1px solid #2c2c2c;
+      color: #34495e;
     }
 
-    .sidebar ul li a:hover {
-      background-color: #2c2c2c;
+.sidebar ul li a:hover {
+      background-color: #f0f0f0;
     }
 
-    /* Enhanced Styles for the Articles Container */
-    .articles-container {
-      width: 70%;
+.articles-container {
+      width: 75%;
       float: right;
     }
 
-    /* Enhanced Styles for the Contact Container */
-    .contact-container {
+.contact-container {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
       text-align: center;
-      color: #555555;
     }
 
-    .contact-container h2 {
-      margin-bottom: 10px;
-      color: #3498db;
-    }
-
-    .contact-container p {
-      line-height: 1.5;
+.contact-container p {
       margin-bottom: 10px;
     }
 
-    .contact-container ul li strong {
-      font-weight: bold;
-      color: #555555;
+.contact-container ul {
+      list-style: none;
+      padding: 0;
     }
 
-    .contact-container ul li a {
-      text-decoration: none;
-      color: #3498db;
-    }
-
-    .contact-container ul li a:hover {
-      text-decoration: underline;
-    }
-
-    /* Enhanced Styles for the About Container */
-    .about-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      color: #555555;
-    }
-
-    .about-container h2 {
-      margin-bottom: 10px;
-      color: #3498db;
-    }
-
-    .profile-img {
-      border-radius: 50%;
-    }
-
-    .text-container {
-      max-width: 600px;
-      margin-top: 20px;
-    }
-
-    .text-container p {
-      line-height: 1.5;
-      margin-bottom: 10px;
+.contact-container li {
+      margin-bottom: 5px;
     }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>EnergyKI</h1>
+<h1>EnergyKI - ESG KI und Erneuerbare Energien</h1>
     <nav>
       <ul>
-        <li><a href="#" id="articles-link">Artikel</a></li>
-        <li><a href="#" id="contact-link">Kontakt</a></li>
-        <li><a href="#" id="about-link">Über uns</a></li>
+        <li><a href="#" id="articles-link"><i class="fas fa-newspaper"></i> Artikel</a></li>
+        <li><a href="#" id="contact-link"><i class="fas fa-envelope"></i> Kontakt</a></li>
+        <li><a href="#" id="about-link"><i class="fas fa-user"></i> Über uns</a></li>
       </ul>
     </nav>
   </header>
@@ -230,97 +325,105 @@
   <div class="container">
     <!-- Articles Section (Landing Page) -->
     <section id="articles" class="content active">
-      <div class="sidebar">
-        <!-- Sidebar with list of article titles -->
-        <ul>
-          <li><a href="#article-1">Die Bedeutung erneuerbarer Energien</a></li>
-          <li><a href="#article-2">Europas Weg zur Nutzung erneuerbarer Energien</a></li>
-          <li><a href="#article-3">Die Rolle von Wasserkraft in der Energiewende</a></li>
-          <li><a href="#article-4">Die Potenziale von Solarenergie in Europa</a></li>
-        </ul>
-      </div>
+  <div class="sidebar">
+    <!-- Sidebar with list of article titles -->
+    <ul>
+      <li><a href="#article-1">Die Bedeutung erneuerbarer Energien für Deutschlands Energiewende</a></li>
+      <li><a href="#article-2">Europas Weg zur vollständigen Nutzung erneuerbarer Energien</a></li>
+      <li><a href="#article-3">Die Rolle von Wasserkraft in der Energiewende</a></li>
+      <li><a href="#article-4">Die Potenziale von Solarenergie in Europa</a></li>
+    </ul>
+  </div>
 
-      <div class="articles-container">
-        <h2>Willkommen bei EnergyKI!</h2>
-        <p>Tauchen Sie ein in die Welt von ESG, Künstlicher Intelligenz und Erneuerbaren Energien durch sorgfältig ausgewählte Artikel, die aktuelle Entwicklungen und Innovationen beleuchten. Entdecken und lassen Sie sich inspirieren!</p>
+  <div class="articles-container">
+    <h2>Willkommen!</h2>
+    <p>Tauchen Sie ein in die Welt von ESG, Künstlicher Intelligenz und Erneuerbaren Energien durch sorgfältig ausgewählte Artikel, die aktuelle Entwicklungen und Innovationen beleuchten. Entdecken und inspirieren Sie sich hier!.</p>
 
-        <!-- Article 1 -->
+    <!-- Article 1 -->
         <div class="card" id="article-1">
           <h3>Die Bedeutung erneuerbarer Energien für Deutschlands Energiewende</h3>
-          <p>Nur ein Auszug des Artikels wird angezeigt. Klicken Sie auf "Mehr erfahren", um den gesamten Artikel zu lesen.</p>
-          <button class="button" onclick="toggleArticle('article-1')">Mehr erfahren</button>
-          <div class="article-content hidden" id="article-1-content">
+  <p>Nur ein Auszug des Artikels wird angezeigt. Klicken Sie auf "Mehr erfahren", um den gesamten Artikel zu lesen.</p>
+  <button class="button" onclick="toggleArticle('article-1')">Mehr erfahren</button>
+  <div class="article-content hidden" id="article-1-content">
+           
+    <p>Die Energiewende in Deutschland spielt eine entscheidende Rolle im Kampf gegen den Klimawandel und die Reduzierung von Treibhausgasemissionen. Deutschland hat sich ehrgeizige Ziele gesetzt, um seinen Energiebedarf aus erneuerbaren Quellen zu decken und die Abhängigkeit von fossilen Brennstoffen zu verringern. In diesem Artikel werden wir die Bedeutung erneuerbarer Energien für Deutschlands Energiewende eingehend untersuchen.</p>
+  <p>Wir werden auf die verschiedenen Arten erneuerbarer Energien eingehen, wie Windkraft, Solarenergie, Biomasse und Wasserkraft, und wie sie dazu beitragen können, die Energieversorgung nachhaltiger zu gestalten. Die Windenergie spielt eine besonders wichtige Rolle in Deutschland, da das Land über eine starke Windressourcen verfügt. Wir werden die Fortschritte bei der Windenergieerzeugung diskutieren und wie Deutschland seine Kapazitäten weiter ausbauen kann.</p>
 
-            <p>Die Energiewende in Deutschland spielt eine entscheidende Rolle im Kampf gegen den Klimawandel und die Reduzierung von Treibhausgasemissionen. Deutschland hat sich ehrgeizige Ziele gesetzt, um seinen Energiebedarf aus erneuerbaren Quellen zu decken und die Abhängigkeit von fossilen Brennstoffen zu verringern. In diesem Artikel werden wir die Bedeutung erneuerbarer Energien für Deutschlands Energiewende eingehend untersuchen.</p>
+  <p>Darüber hinaus werden wir die politischen Maßnahmen und Förderprogramme beleuchten, die in Deutschland implementiert wurden, um den Ausbau erneuerbarer Energien zu unterstützen. Dazu gehören das Erneuerbare-Energien-Gesetz (EEG), das Einspeisevergütungssystem und verschiedene Finanzierungsmechanismen. Wir werden auch die Bedeutung von Bürgerenergieprojekten und Bürgerbeteiligung bei der Energiewende diskutieren.</p>
 
+  <p>Wir werden die Herausforderungen diskutieren, die mit der Integration erneuerbarer Energien in das Energiesystem verbunden sind, wie die Netzstabilität, die Speicherung und der Netzausbau. Es gibt auch wirtschaftliche Aspekte zu berücksichtigen, wie die Wettbewerbsfähigkeit erneuerbarer Energien im Vergleich zu konventionellen Energieträgern.</p>
+
+  <p>Schließlich werden wir die zukünftigen Perspektiven und Potenziale analysieren. Neue Technologien wie Power-to-X, bei dem überschüssige erneuerbare Energie zur Produktion von Wasserstoff oder synthetischen Kraftstoffen genutzt wird, eröffnen neue Möglichkeiten. Wir werden auch über die Rolle von Speichertechnologien und intelligenten Energienetzen sprechen, um die Integration erneuerbarer Energien weiter zu verbessern.</p>
+
+  <p>Die Bedeutung erneuerbarer Energien für Deutschlands Energiewende kann nicht überschätzt werden. Durch den verstärkten Ausbau und die Nutzung erneuerbarer Energien kann Deutschland seine Klimaziele erreichen und eine nachhaltige und saubere Energiezukunft gestalten.</p>
             <img src="https://cdn.pixabay.com/photo/2017/03/13/07/34/photovoltaic-2138992_1280.jpg" alt="Bild des Artikels">
           </div>
         </div>
 
-        <!-- Article 2 -->
-        <div class="card" id="article-2">
-          <h3>Europas Weg zur vollständigen Nutzung erneuerbarer Energien</h3>
-          <p>Nur ein Auszug des Artikels wird angezeigt. Klicken Sie auf "Mehr erfahren", um den gesamten Artikel zu lesen.</p>
-          <button class="button" onclick="toggleArticle('article-2')">Mehr erfahren</button>
-          <div class="article-content hidden" id="article-2-content">
-            <p>Europa hat ehrgeizige Ziele für den Ausbau erneuerbarer Energien und die Reduzierung von Kohlenstoffemissionen. Der Übergang zu einer nachhaltigen Energieversorgung ist von entscheidender Bedeutung, um den Klimawandel einzudämmen und eine sichere und bezahlbare Energieversorgung für die Zukunft zu gewährleisten. In diesem Artikel werden wir Europas Weg zur vollständigen Nutzung erneuerbarer Energien genauer betrachten.</p>
-            <img src="https://cdn.pixabay.com/photo/2017/09/12/13/21/photovoltaic-system-2742302_640.jpg" alt="Bild des Artikels">
-          </div>
-        </div>
-
-        <!-- Article 3 -->
-        <div class="card" id="article-3">
-          <h3>Die Rolle von Wasserkraft in der Energiewende</h3>
-          <p>Nur ein Auszug des Artikels wird angezeigt. Klicken Sie auf "Mehr erfahren", um den gesamten Artikel zu lesen.</p>
-          <button class="button" onclick="toggleArticle('article-3')">Mehr erfahren</button>
-          <div class="article-content hidden" id="article-3-content">
-            <p>Wasserkraft spielt eine wichtige Rolle in der Energiewende. In diesem Artikel werden wir die Rolle von Wasserkraft in der Energiewende genauer untersuchen.</p>
-            <img src="https://cdn.pixabay.com/photo/2016/11/23/14/48/sunflowers-1853323_640.jpg" alt="Bild des Artikels">
-          </div>
-        </div>
-
-        <!-- Article 4 -->
-        <div class="card" id="article-4">
-          <h3>Die Potenziale von Solarenergie in Europa</h3>
-          <p>Nur ein Auszug des Artikels wird angezeigt. Klicken Sie auf "Mehr erfahren", um den gesamten Artikel zu lesen.</p>
-          <button class="button" onclick="toggleArticle('article-4')">Mehr erfahren</button>
-          <div class="article-content hidden" id="article-4-content">
-            <p>Solarenergie ist eine der saubersten und umweltfreundlichsten Energiequellen und spielt eine entscheidende Rolle in der Energiewende. In diesem Artikel werden wir die Potenziale von Solarenergie in Europa genauer betrachten.</p>
-            <img src="https://cdn.pixabay.com/photo/2012/06/22/23/08/windmill-50512_640.jpg" alt="Bild des Artikels">
-          </div>
-        </div>
+    <!-- Article 2 -->
+    <div class="card" id="article-2">
+      <h3>Der Einfluss des Klimawandels auf die globale Politik</h3>
+  <p>Nur ein Auszug des Artikels wird angezeigt. Klicken Sie auf "Mehr erfahren", um den gesamten Artikel zu lesen.</p>
+  <button class="button" onclick="toggleArticle('article-2')">Mehr erfahren</button>
+  <div class="article-content hidden" id="article-2-content">
+        <p>Europa hat ehrgeizige Ziele für den Ausbau erneuerbarer Energien und die Reduzierung von Kohlenstoffemissionen. Der Übergang zu einer nachhaltigen Energieversorgung ist von entscheidender Bedeutung, um den Klimawandel einzudämmen und eine sichere und bezahlbare Energieversorgung für die Zukunft zu gewährleisten. In diesem Artikel werden wir Europas Weg zur vollständigen Nutzung erneuerbarer Energien genauer betrachten.</p>
+        <img src="https://cdn.pixabay.com/photo/2017/09/12/13/21/photovoltaic-system-2742302_640.jpg" alt="Bild des Artikels">
       </div>
-    </section>
+    </div>
+
+    <!-- Article 3 -->
+    <div class="card" id="article-3">
+      <h3>Die Entwicklung von Künstlicher Intelligenz und ihre Auswirkungen auf die Gesellschaft</h3>
+  <p>Nur ein Auszug des Artikels wird angezeigt. Klicken Sie auf "Mehr erfahren", um den gesamten Artikel zu lesen.</p>
+  <button class="button" onclick="toggleArticle('article-3')">Mehr erfahren</button>
+  <div class="article-content hidden" id="article-3-content">
+        <p>Wasserkraft spielt eine wichtige Rolle in der Energiewende. In diesem Artikel werden wir die Rolle von Wasserkraft in der Energiewende genauer untersuchen.</p>
+        <img src="https://cdn.pixabay.com/photo/2016/11/23/14/48/sunflowers-1853323_640.jpg" alt="Bild des Artikels">
+      </div>
+    </div>
+
+    <!-- Article 4 -->
+    <div class="card" id="article-4">
+      <h3>Die Zukunft der Raumfahrt und interplanetare Reisen</h3>
+  <p>Nur ein Auszug des Artikels wird angezeigt. Klicken Sie auf "Mehr erfahren", um den gesamten Artikel zu lesen.</p>
+  <button class="button" onclick="toggleArticle('article-4')">Mehr erfahren</button>
+  <div class="article-content hidden" id="article-4-content">
+        <p>Solarenergie ist eine der saubersten und umweltfreundlichsten Energiequellen und spielt eine entscheidende Rolle in der Energiewende. In diesem Artikel werden wir die Potenziale von Solarenergie in Europa genauer betrachten.</p>
+        <img src="https://cdn.pixabay.com/photo/2012/06/22/23/08/windmill-50512_640.jpg" alt="Bild des Artikels">
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="content">
       <div class="contact-container">
-        <h2>Kontakt</h2>
-        <p>Haben Sie Fragen, Anregungen oder möchten Sie Kontakt mit uns aufnehmen?</p>
-        <p>Sie können uns wie folgt erreichen:</p>
+    <h2>Kontakt</h2>
+    <p>Haben Sie Fragen, Anregungen oder möchten Sie Kontakt mit uns aufnehmen?</p>
+    <p>Sie können uns wie folgt erreichen:</p>
 
-        <ul>
-          <li><strong>Email:</strong> your-email@example.com</li>
-          <li><strong>Telefon:</strong> +49 123 456789</li>
-          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/your-profile" target="_blank"><i class="fab fa-linkedin"></i> Ihr LinkedIn-Profil</a></li>
-        </ul>
-      </div>
-    </section>
+    <ul>
+      <li><strong>Email:</strong> your-email@example.com</li>
+      <li><strong>Telefon:</strong> +49 123 456789</li>
+      <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/your-profile" target="_blank"><i class="fab fa-linkedin"></i> Ihr LinkedIn-Profil</a></li>
+    </ul>
+  </div>
+</section>
 
     <!-- About Section -->
     <section id="about" class="content">
-      <div class="about-container">
-        <h2>Benni Wörpel</h2>
-        <div class="profile-container">
-          <img src="https://cdn.pixabay.com/photo/2018/03/27/21/43/startup-3267505_960_720.jpg" alt="Bild des Teams" class="profile-img">
-        </div>
-        <div class="text-container">
-          <p>Gründer EnergyKI - Mit einem vielseitigen akademischen Hintergrund, der sich von Lebensmittelwissenschaften über Klimawandel und erneuerbare Energien bis hin zur Blockchain-Technologie erstreckt, bin ich, Benni Woerpel, ein Enthusiast, der sich leidenschaftlich für Nachhaltigkeit und technologische Innovationen einsetzt.</p>
-          <p>Unser Ziel ist es, das Bewusstsein für die Bedeutung erneuerbarer Energien zu fördern und innovative Lösungen für eine nachhaltige Zukunft zu entwickeln. Auf unserem Blog teilen wir unser Wissen und informieren über aktuelle Entwicklungen und Trends in der Branche.</p>
-          <p>Durch mein Masterstudium an der renommierten Humboldt-Universität zu Berlin sowie durch meine Tätigkeit als Geschäftsführer bei Lition, einem Unternehmen mit internationalem Wirkungskreis, habe ich nicht nur eine weitreichende internationale Perspektive entwickelt, sondern auch wertvolle Expertise in diversen Fachbereichen erlangt. Zugleich konnte ich sowohl meine Führungsqualitäten als auch meine Kompetenzen in der Forschung unter Beweis stellen.</p>
-        </div>
-      </div>
-    </section>
+  <div class="about-container">
+    <h2>Benni Wörpel</h2>
+    <div class="profile-container">
+      <img src="https://cdn.pixabay.com/photo/2018/03/27/21/43/startup-3267505_960_720.jpg" alt="Bild des Teams" class="profile-img">
+    </div>
+    <div class="text-container">
+      <p>Gründer EnergyKI - Mit einem vielseitigen akademischen Hintergrund, der sich von Lebensmittelwissenschaften über Klimawandel und erneuerbare Energien bis hin zur Blockchain-Technologie erstreckt, bin ich, Benni Woerpel, ein Enthusiast, der sich leidenschaftlich für Nachhaltigkeit und technologische Innovationen einsetzt.</p>
+      <p>Unser Ziel ist es, das Bewusstsein für die Bedeutung erneuerbarer Energien zu fördern und innovative Lösungen für eine nachhaltige Zukunft zu entwickeln. Auf unserem Blog teilen wir unser Wissen und informieren über aktuelle Entwicklungen und Trends in der Branche.</p>
+      <p>Durch mein Masterstudium an der renommierten Humboldt-Universität zu Berlin sowie durch meine Tätigkeit als Geschäftsführer bei Lition, einem Unternehmen mit internationalem Wirkungskreis, habe ich nicht nur eine weitreichende internationale Perspektive entwickelt, sondern auch wertvolle Expertise in diversen Fachbereichen erlangt. Zugleich konnte ich sowohl meine Führungsqualitäten als auch meine Kompetenzen in der Forschung unter Beweis stellen.</p>
+    </div>
+  </div>
+</section>
 
   </div>
 
@@ -330,12 +433,12 @@
 
   <script>
     function toggleArticle(articleId) {
-      const content = document.getElementById(`${articleId}-content`);
-      if (content.style.display === 'block') {
-        content.style.display = 'none';
-      } else {
-        content.style.display = 'block';
-      }
+    const content = document.getElementById(`${articleId}-content`);
+    if (content.style.display === 'block') {
+content.style.display = 'none';
+    } else {
+content.style.display = 'block';
+    }
     }
 
     // JavaScript code for switching between content sections
@@ -346,22 +449,22 @@
     const contactSection = document.getElementById('contact');
     const aboutSection = document.getElementById('about');
 
-    articlesLink.addEventListener('click', () => {
-      articlesSection.classList.add('active');
-      contactSection.classList.remove('active');
-      aboutSection.classList.remove('active');
+articlesLink.addEventListener('click', () => {
+articlesSection.classList.add('active');
+contactSection.classList.remove('active');
+aboutSection.classList.remove('active');
     });
 
-    contactLink.addEventListener('click', () => {
-      articlesSection.classList.remove('active');
-      contactSection.classList.add('active');
-      aboutSection.classList.remove('active');
+contactLink.addEventListener('click', () => {
+articlesSection.classList.remove('active');
+contactSection.classList.add('active');
+aboutSection.classList.remove('active');
     });
 
-    aboutLink.addEventListener('click', () => {
-      articlesSection.classList.remove('active');
-      contactSection.classList.remove('active');
-      aboutSection.classList.add('active');
+aboutLink.addEventListener('click', () => {
+articlesSection.classList.remove('active');
+contactSection.classList.remove('active');
+aboutSection.classList.add('active');
     });
   </script>
 </body>
