@@ -5,16 +5,16 @@
   <meta charset="UTF-8">
 <title>EnergyKI - ESG KI und Erneuerbare Energien </title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-html,
-body {
+<style>
+    html,
+    body {
       height: 100%;
       margin: 0;
       padding: 0;
       font-family: 'Arial', sans-serif;
     }
 
-header {
+    header {
       background-color: #34495e;
       padding: 20px;
       text-align: center;
@@ -23,173 +23,18 @@ header {
       top: 0;
       z-index: 1000;
     }
-    
-.contact-container {
-  text-align: center;
-}
 
-.contact-container h2 {
-  margin-bottom: 10px;
-}
-
-.contact-container p {
-  line-height: 1.5;
-  margin-bottom: 10px;
-}
-
-.contact-container ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-}
-
-.contact-container ul li {
-  margin-bottom: 10px;
-}
-
-.contact-container ul li strong {
-  font-weight: bold;
-}
-
-.contact-container ul li a {
-  text-decoration: none;
-  color: #3498db;
-}
-
-.contact-container ul li a:hover {
-  text-decoration: underline;
-}
-
-.card .article-content {
-  display: none;
-}
-
-.card .hidden {
-  display: none;
-}
-
-.card .button {
-  margin-top: 10px;
-}
-
-.articles-container {
-  width: 75%;
-  float: right;
-}
-
-.card {
-  background-color: #f8f8f8;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 20px;
-  padding: 20px;
-  transition: box-shadow 0.3s ease;
-}
-
-.card:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.card h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.card p {
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-
-.card img {
-  max-width: 100%;
-  border-radius: 5px;
-}
-
-.button {
-  display: inline-block;
-  background-color: #3498db;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: #2980b9;
-}
-    
-.about-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-.profile-container {
-  margin-top: 20px;
-}
-
-.profile-img {
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.text-container {
-  max-width: 600px;
-  margin-top: 20px;
-}
-
-.text-container p {
-  line-height: 1.5;
-  margin-bottom: 10px;
-}
-
-nav ul {
-      list-style: none;
-      padding: 0;
-    }
-
-nav ul li {
-      display: inline-block;
-      margin-right: 20px;
-    }
-
-nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 20px;
-      padding: 5px 10px;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-
-nav ul li a:hover {
-      background-color: #2c3e50;
-    }
-
-.container {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      position: relative;
-    }
-
-.content {
+    .content {
       display: none;
       padding: 20px;
     }
 
-.content.active {
+    .content.active {
       display: block;
     }
 
-.card {
-      background-color: #ffffff;
+    .card {
+      background-color: #f8f8f8;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       margin: 20px;
@@ -197,20 +42,26 @@ nav ul li a:hover {
       transition: box-shadow 0.3s ease;
     }
 
-.card:hover {
+    .card:hover {
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
 
-.card-content {
-      padding: 20px;
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
     }
 
-.card img {
+    .card p {
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .card img {
       max-width: 100%;
       border-radius: 5px;
     }
 
-.button {
+    .button {
       display: inline-block;
       background-color: #3498db;
       color: white;
@@ -220,51 +71,18 @@ nav ul li a:hover {
       transition: background-color 0.3s ease;
     }
 
-.button:hover {
+    .button:hover {
       background-color: #2980b9;
     }
 
-.profile-img {
-      border-radius: 50%;
+.article-content {
+      display: none;
     }
 
-footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #34495e;
-      color: white;
-      position: sticky;
-      bottom: 0;
-      width: 100%;
+.hidden {
+      display: none;
     }
 
-#home {
-      text-align: center;
-      padding-top: 20px;
-    }
-
-#home i {
-      font-size: 48px;
-      color: #3498db;
-    }
-
-#home h2 {
-      margin-top: 20px;
-    }
-
-.article-preview {
-      display: inline-block;
-      width: 23%;
-      margin: 1%;
-    }
-
-    @media screen and (max-width: 768px) {
-.article-preview {
-        width: 48%;
-      }
-    }
-
-    /* New styles for the sidebar tool */
 .sidebar {
       position: sticky;
       top: 20px;
@@ -315,7 +133,7 @@ footer {
 .contact-container li {
       margin-bottom: 5px;
     }
-  </style>
+</style>
 </head>
 
 <body>
