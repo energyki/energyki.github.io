@@ -60,6 +60,18 @@ header {
   text-decoration: underline;
 }
 
+.card .article-content {
+  display: none;
+}
+
+.card .hidden {
+  display: none;
+}
+
+.card .button {
+  margin-top: 10px;
+}
+
 .articles-container {
   width: 75%;
   float: right;
@@ -333,35 +345,50 @@ footer {
 
   <div class="articles-container">
     <h2>Willkommen!</h2>
-    <p>Tauchen Sie ein in die Welt von ESG, Künstlicher Intelligenz und Erneuerbaren Energien durch sorgfältig ausgewählte Artikel, die aktuelle Entwicklungen und Innovationen beleuchten. Entdecken und lassen Sie sich inspirieren!</p>
+    <p>Tauchen Sie ein in die Welt von ESG, Künstlicher Intelligenz und Erneuerbaren Energien durch sorgfältig ausgewählte Artikel, die aktuelle Entwicklungen und Innovationen beleuchten. Entdecken und inspirieren Sie sich hier!.</p>
 
-    <!-- Add an id to each article for scrolling -->
+    <!-- Article 1 -->
     <div class="card" id="article-1">
       <h3>Die Bedeutung erneuerbarer Energien für Deutschlands Energiewende</h3>
-      <p>Die Energiewende in Deutschland spielt eine entscheidende Rolle im Kampf gegen den Klimawandel und die Reduzierung von Treibhausgasemissionen. Deutschland hat sich ehrgeizige Ziele gesetzt, um seinen Energiebedarf aus erneuerbaren Quellen zu decken und die Abhängigkeit von fossilen Brennstoffen zu verringern. In diesem Artikel werden wir die Bedeutung erneuerbarer Energien für Deutschlands Energiewende eingehend untersuchen.</p>
-      <img src="https://cdn.pixabay.com/photo/2017/03/13/07/34/photovoltaic-2138992_1280.jpg" alt="Bild des Artikels">
-      <a href="#" class="button">Mehr erfahren</a>
+      <p>Nur ein Auszug des Artikels wird angezeigt. Klicken Sie auf "Mehr erfahren", um den gesamten Artikel zu lesen.</p>
+      <button class="button" onclick="toggleArticle('article-1')">Mehr erfahren</button>
+      <div class="article-content hidden">
+        <p>Die Energiewende in Deutschland spielt eine entscheidende Rolle im Kampf gegen den Klimawandel und die Reduzierung von Treibhausgasemissionen. Deutschland hat sich ehrgeizige Ziele gesetzt, um seinen Energiebedarf aus erneuerbaren Quellen zu decken und die Abhängigkeit von fossilen Brennstoffen zu verringern. In diesem Artikel werden wir die Bedeutung erneuerbarer Energien für Deutschlands Energiewende eingehend untersuchen.</p>
+        <img src="https://cdn.pixabay.com/photo/2017/03/13/07/34/photovoltaic-2138992_1280.jpg" alt="Bild des Artikels">
+      </div>
     </div>
 
+    <!-- Article 2 -->
     <div class="card" id="article-2">
       <h3>Europas Weg zur vollständigen Nutzung erneuerbarer Energien</h3>
-      <p>Europa hat ehrgeizige Ziele für den Ausbau erneuerbarer Energien und die Reduzierung von Kohlenstoffemissionen. Der Übergang zu einer nachhaltigen Energieversorgung ist von entscheidender Bedeutung, um den Klimawandel einzudämmen und eine sichere und bezahlbare Energieversorgung für die Zukunft zu gewährleisten. In diesem Artikel werden wir Europas Weg zur vollständigen Nutzung erneuerbarer Energien genauer betrachten.</p>
-      <img src="https://cdn.pixabay.com/photo/2017/09/12/13/21/photovoltaic-system-2742302_640.jpg" alt="Bild des Artikels">
-      <a href="#" class="button">Mehr erfahren</a>
+      <p>Nur ein Auszug des Artikels wird angezeigt. Klicken Sie auf "Mehr erfahren", um den gesamten Artikel zu lesen.</p>
+      <button class="button" onclick="toggleArticle('article-2')">Mehr erfahren</button>
+      <div class="article-content hidden">
+        <p>Europa hat ehrgeizige Ziele für den Ausbau erneuerbarer Energien und die Reduzierung von Kohlenstoffemissionen. Der Übergang zu einer nachhaltigen Energieversorgung ist von entscheidender Bedeutung, um den Klimawandel einzudämmen und eine sichere und bezahlbare Energieversorgung für die Zukunft zu gewährleisten. In diesem Artikel werden wir Europas Weg zur vollständigen Nutzung erneuerbarer Energien genauer betrachten.</p>
+        <img src="https://cdn.pixabay.com/photo/2017/09/12/13/21/photovoltaic-system-2742302_640.jpg" alt="Bild des Artikels">
+      </div>
     </div>
 
+    <!-- Article 3 -->
     <div class="card" id="article-3">
       <h3>Die Rolle von Wasserkraft in der Energiewende</h3>
-      <p>Wasserkraft spielt eine wichtige Rolle in der Energiewende. In diesem Artikel werden wir die Rolle von Wasserkraft in der Energiewende genauer untersuchen.</p>
-      <img src="https://cdn.pixabay.com/photo/2016/11/23/14/48/sunflowers-1853323_640.jpg" alt="Bild des Artikels">
-      <a href="#" class="button">Mehr erfahren</a>
+      <p>Nur ein Auszug des Artikels wird angezeigt. Klicken Sie auf "Mehr erfahren", um den gesamten Artikel zu lesen.</p>
+      <button class="button" onclick="toggleArticle('article-3')">Mehr erfahren</button>
+      <div class="article-content hidden">
+        <p>Wasserkraft spielt eine wichtige Rolle in der Energiewende. In diesem Artikel werden wir die Rolle von Wasserkraft in der Energiewende genauer untersuchen.</p>
+        <img src="https://cdn.pixabay.com/photo/2016/11/23/14/48/sunflowers-1853323_640.jpg" alt="Bild des Artikels">
+      </div>
     </div>
 
+    <!-- Article 4 -->
     <div class="card" id="article-4">
       <h3>Die Potenziale von Solarenergie in Europa</h3>
-      <p>Solarenergie ist eine der saubersten und umweltfreundlichsten Energiequellen und spielt eine entscheidende Rolle in der Energiewende. In diesem Artikel werden wir die Potenziale von Solarenergie in Europa genauer betrachten.</p>
-      <img src="https://cdn.pixabay.com/photo/2012/06/22/23/08/windmill-50512_640.jpg" alt="Bild des Artikels">
-      <a href="#" class="button">Mehr erfahren</a>
+      <p>Nur ein Auszug des Artikels wird angezeigt. Klicken Sie auf "Mehr erfahren", um den gesamten Artikel zu lesen.</p>
+      <button class="button" onclick="toggleArticle('article-4')">Mehr erfahren</button>
+      <div class="article-content hidden">
+        <p>Solarenergie ist eine der saubersten und umweltfreundlichsten Energiequellen und spielt eine entscheidende Rolle in der Energiewende. In diesem Artikel werden wir die Potenziale von Solarenergie in Europa genauer betrachten.</p>
+        <img src="https://cdn.pixabay.com/photo/2012/06/22/23/08/windmill-50512_640.jpg" alt="Bild des Artikels">
+      </div>
     </div>
   </div>
 </section>
@@ -429,7 +456,12 @@ contactSection.classList.remove('active');
 aboutSection.classList.add('active');
     });
   </script>
-
+<script>
+  function toggleArticle(articleId) {
+    const articleContent = document.getElementById(articleId).querySelector('.article-content');
+articleContent.classList.toggle('hidden');
+  }
+</script>
 </body>
 
 </html>
